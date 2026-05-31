@@ -71,8 +71,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def log_message(self, format, *args):
         pass
 
+class ReusableTCPServer(socketserver.TCPServer):
+    allow_reuse_address = True
+
 def start_server():
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    with ReusableTCPServer(("", PORT), Handler) as httpd:
         print(f"Dashboard server running at http://localhost:{PORT}")
         print("Press Ctrl+C to stop.")
         httpd.serve_forever()
