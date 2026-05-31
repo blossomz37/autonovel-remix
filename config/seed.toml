@@ -69,3 +69,11 @@ Make the variations genuinely different from each other -- don't just
 tweak surface details. Change the protagonist, the setting, the tone,
 the structure, the thematic focus.
 """
+
+select_prompt = """You are a discerning fiction editor and acquisitions agent.
+I will give you a list of generated novel seed concepts. 
+Your job is to select the SINGLE BEST concept from the list based on the following criteria:
+{criteria}
+
+Respond with ONLY the text of the winning seed concept exactly as it appears in the list. Do not include any explanations, introductory text, or concluding remarks. Just the seed itself.
+"""

@@ -54,6 +54,8 @@ def main():
                         help="Number of concepts to generate (default: 10)")
     parser.add_argument("--riff", type=str, default=None,
                         help="Riff on an existing idea")
+    parser.add_argument("--auto-select", nargs="?", const="the most original, narratively sound, and compelling option", default=None,
+                        help="Automatically select the best seed and write it to seed.txt. Optionally provide selection criteria.")
     args = parser.parse_args()
 
     if not ANTHROPIC_API_KEY:
@@ -69,11 +71,47 @@ def main():
 
     result = call_writer(prompt)
     print(result)
-    print("\n" + "=" * 60)
-    print("To pick a seed, copy the concept you like into seed.txt:")
-    print("  nano seed.txt")
-    print("Or remix several concepts into your own seed.")
-    print("Then proceed to Step 2 in WORKFLOW.md.")
+    
+    ideas_dir = PROJECT_DIR / "ideas"
+    ideas_dir.mkdir(exist_ok=True)
+    
+    out_file = ideas_dir / ("riff.md" if args.riff else "seeds.md")
+    out_file.write_text(result)
+    
+    if args.auto_select:
+        print("\n" + "=" * 60)
+        print(f"Auto-selecting the best seed using criteria: '{args.auto_select}'...")
+        select_prompt = CONFIG["prompts"]["select_prompt"].format(criteria=args.auto_select)
+        full_select_prompt = f"{select_prompt}\n\nGENERATED SEEDS:\n{result}"
+        
+        from api_client import call_llm
+        from pathlib import Path
+        
+        selected_seed = call_llm(
+            messages=[
+                {"role": "user", "content": full_select_prompt}
+            ],
+            model=WRITER_MODEL,
+            max_tokens=2000,
+            temperature=0.4,
+            stream=True,
+            script_name=Path(__file__).name
+        )
+        
+        seed_txt = PROJECT_DIR / "lore" / "seed.txt"
+        seed_txt.parent.mkdir(parents=True, exist_ok=True)
+        seed_txt.write_text(selected_seed.strip())
+        
+        print("\n" + "=" * 60)
+        print(f"Auto-selected seed written to: {seed_txt.relative_to(BASE_DIR)}")
+        print("Then proceed to Step 2 in WORKFLOW.md.")
+    else:
+        print("\n" + "=" * 60)
+        print(f"Saved concepts to: {out_file.relative_to(BASE_DIR)}")
+        print("To pick a seed, copy the concept you like into workspace/lore/seed.txt:")
+        print("  nano workspace/lore/seed.txt")
+        print("Or remix several concepts into your own seed.")
+        print("Then proceed to Step 2 in WORKFLOW.md.")
 
 
 if __name__ == "__main__":
