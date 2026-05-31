@@ -266,7 +266,7 @@
     .preview-pane {
       flex: 1;
       overflow-y: auto;
-      padding: 2rem 3rem;
+      padding: 2.5rem 3.5rem;
       scrollbar-width: thin;
       scrollbar-color: rgba(255,255,255,0.06) transparent;
     }
@@ -286,31 +286,39 @@
     .preview-empty .icon { font-size: 2.5rem; opacity: 0.2; }
     .preview-empty p { font-size: 0.9rem; }
 
-    /* Markdown rendering — rainbow accent touches */
-    .md h1 { font-size: 1.8rem; font-weight: 700; margin: 0 0 1rem; color: #fff; border-bottom: 2px solid; border-image: var(--rainbow) 1; padding-bottom: 0.5rem; }
-    .md h2 { font-size: 1.35rem; font-weight: 600; margin: 1.75rem 0 0.75rem; color: #f0f6fc; }
-    .md h3 { font-size: 1.1rem; font-weight: 500; margin: 1.25rem 0 0.5rem; color: var(--text-main); }
-    .md p { margin-bottom: 0.9rem; line-height: 1.7; color: var(--text-main); }
-    .md ul, .md ol { margin: 0 0 1rem 1.5rem; line-height: 1.7; }
-    .md li { margin-bottom: 0.25rem; }
+    /* Markdown rendering — comfortable reading */
+    .md {
+      max-width: 72ch;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .md h1 { font-size: 1.75rem; font-weight: 700; margin: 0 0 1.25rem; color: #fff; border-bottom: 2px solid; border-image: var(--rainbow) 1; padding-bottom: 0.6rem; }
+    .md h2 { font-size: 1.35rem; font-weight: 600; margin: 2rem 0 0.75rem; color: #f0f6fc; }
+    .md h3 { font-size: 1.1rem; font-weight: 500; margin: 1.5rem 0 0.5rem; color: var(--text-main); }
+    .md p { margin-bottom: 1rem; line-height: 1.8; color: var(--text-main); }
+    .md ul, .md ol { margin: 0 0 1.25rem 1.5rem; line-height: 1.8; }
+    .md li { margin-bottom: 0.35rem; }
+    .md li > ul, .md li > ol { margin-top: 0.35rem; margin-bottom: 0; }
     .md strong { color: #fff; }
     .md em { color: var(--c-emerald); }
     .md blockquote {
       border-left: 3px solid var(--c-violet);
-      padding: 0.5rem 1rem;
-      margin: 0 0 1rem;
+      padding: 0.6rem 1.25rem;
+      margin: 0 0 1.25rem;
       background: rgba(124, 58, 237, 0.06);
       border-radius: 0 8px 8px 0;
+      font-style: italic;
     }
+    .md blockquote p:last-child { margin-bottom: 0; }
     .md pre {
       background: rgba(0, 0, 0, 0.4);
-      padding: 1rem;
+      padding: 1.25rem;
       border-radius: 8px;
       overflow-x: auto;
-      margin: 0 0 1rem;
+      margin: 0 0 1.25rem;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.82rem;
-      line-height: 1.5;
+      line-height: 1.6;
       border: 1px solid var(--glass-border);
     }
     .md code {
@@ -318,14 +326,14 @@
       padding: 0.15rem 0.4rem;
       border-radius: 4px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82em;
+      font-size: 0.85em;
       color: var(--c-gold);
     }
-    .md pre code { background: none; padding: 0; color: var(--text-main); }
-    .md table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
-    .md th, .md td { padding: 0.5rem 0.75rem; border: 1px solid var(--glass-border); font-size: 0.85rem; text-align: left; }
+    .md pre code { background: none; padding: 0; color: var(--text-main); font-size: 1em; }
+    .md table { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; }
+    .md th, .md td { padding: 0.5rem 0.75rem; border: 1px solid var(--glass-border); font-size: 0.88rem; text-align: left; }
     .md th { background: rgba(124, 58, 237, 0.08); color: var(--text-muted); font-weight: 500; }
-    .md hr { border: none; height: 2px; background: var(--rainbow); opacity: 0.3; margin: 1.5rem 0; border-radius: 1px; }
+    .md hr { border: none; height: 2px; background: var(--rainbow); opacity: 0.3; margin: 2rem 0; border-radius: 1px; }
 
     .eval-entry {
       display: flex;
@@ -706,7 +714,13 @@
     function renderTree() {
       const el = document.getElementById('file-tree');
       el.innerHTML = '';
-      treeData.forEach(node => el.appendChild(buildNode(node)));
+      folderIdx = 0;
+      treeData.forEach((node, i) => {
+        const domNode = buildNode(node);
+        // Auto-expand the first folder (chapters)
+        if (i === 0 && node.type === 'dir') domNode.classList.add('open');
+        el.appendChild(domNode);
+      });
     }
 
     const folderColors = ['var(--c-violet)', 'var(--c-teal)', 'var(--c-emerald)', 'var(--c-orange)', 'var(--c-rose)', 'var(--c-gold)', 'var(--c-pink)'];
@@ -735,7 +749,9 @@
         file.className = 'tree-file' + (node.path === activeTabPath ? ' active' : '');
         file.dataset.path = node.path;
         const wc = node.words != null ? (node.words > 999 ? (node.words / 1000).toFixed(1) + 'k' : node.words) + 'w' : '';
-        file.innerHTML = `<span class="file-icon">📄</span>${node.name}<span class="file-words">${wc}</span>`;
+        const ext = node.name.split('.').pop();
+        const icon = ext === 'json' ? '{ }' : ext === 'tsv' ? '⊞' : ext === 'toml' ? '⚙' : ext === 'txt' ? '¶' : '◇';
+        file.innerHTML = `<span class="file-icon">${icon}</span>${node.name}<span class="file-words">${wc}</span>`;
         file.onclick = () => openFile(node.name, node.path);
         return file;
       }
@@ -754,6 +770,7 @@
       renderTabs();
       updateActiveHighlight();
       fetchActiveFile();
+      document.getElementById('preview-pane').scrollTo({ top: 0, behavior: 'instant' });
     }
 
     function closeTab(path) {
