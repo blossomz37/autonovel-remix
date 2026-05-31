@@ -13,7 +13,7 @@ the same modify-evaluate-keep/discard loop, applied to fiction.
 
 This fork introduces several structural and architectural improvements to make the pipeline more flexible, robust, and genre-agnostic:
 
-1. **OpenRouter Support & Universal Models:** The pipeline is no longer hardcoded to Anthropic's Claude. It uses OpenRouter, allowing you to seamlessly swap in any model (e.g., `anthropic/claude-3.5-sonnet`, `openai/gpt-4o`, `google/gemini-1.5-pro`) via the `AUTONOVEL_WRITER_MODEL` environment variable.
+1. **OpenRouter Support & Universal Models:** The pipeline is no longer hardcoded to Anthropic's Claude. It uses OpenRouter, allowing you to seamlessly swap in any model (e.g., `anthropic/claude-sonnet-4.6`, `openai/gpt-4o`, `google/gemini-2.5-pro`) via the `AUTONOVEL_WRITER_MODEL` environment variable.
 2. **Robust API Management:** All LLM calls run through a centralized `api_client.py` which includes exponential backoff for rate limits, automatic retries for 404/500 errors, and comprehensive cost tracking for every phase of generation.
 3. **Genre Agnosticism:** Hardcoded "fantasy" biases and specific lore constraints have been stripped out. The pipeline relies on dynamic injection of your own `workspace/lore/genre.md` and `voice.md` files, meaning it can write Cozy Horror, Sci-Fi, Cyberpunk, or Romance just as easily as High Fantasy.
 4. **Autonomous Seed Selection:** You can run `uv run python scripts/seed.py --auto-select` to have the AI generate 10 novel concepts, act as a discerning fiction editor to pick the absolute best one, and automatically slot it into the pipeline.
@@ -87,13 +87,13 @@ See [framework/PIPELINE.md](framework/PIPELINE.md) for the full technical specif
 | `run_drafts.py`    | Batch sequential chapter drafter               |
 
 ### Evaluation
-| Tool                  | Purpose                                           |
-| --------------------- | ------------------------------------------------- |
-| `evaluate.py`         | Mechanical slop scorer + LLM judge                |
-| `adversarial_edit.py` | "Cut 500 words" analysis → classified cuts        |
-| `compare_chapters.py` | Head-to-head Elo tournament                       |
-| `reader_panel.py`     | 4-persona novel-level evaluation                  |
-| `review.py`           | Dual-persona review with stopping conditions      |
+| Tool                  | Purpose                                      |
+| --------------------- | -------------------------------------------- |
+| `evaluate.py`         | Mechanical slop scorer + LLM judge           |
+| `adversarial_edit.py` | "Cut 500 words" analysis → classified cuts   |
+| `compare_chapters.py` | Head-to-head Elo tournament                  |
+| `reader_panel.py`     | 4-persona novel-level evaluation             |
+| `review.py`           | Dual-persona review with stopping conditions |
 
 ### Revision
 | Tool              | Purpose                                     |
@@ -205,7 +205,7 @@ Copy `.env.example` to `.env` and fill in your keys. Only `OPENROUTER_API_KEY` i
 ---
 
 ## Inspiration
-
+- [NousResearch/autonovel](https://github.com/NousResearch/autonovel)
 - [karpathy/autoresearch](https://github.com/karpathy/autoresearch) — the autonomous research loop
 - Brandon Sanderson's writing lectures (Laws of Magic, character sliders)
 - K.M. Weiland's *Creating Character Arcs*
