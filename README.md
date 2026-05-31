@@ -1,4 +1,6 @@
-# autonovel
+# autonovel-remix
+
+This repo is a reworking of `https://github.com/NousResearch/autonovel`.
 
 An autonomous pipeline for writing, revising, typesetting, illustrating,
 and narrating a complete novel. From a seed concept to a print-ready PDF,
@@ -62,58 +64,58 @@ See [PIPELINE.md](PIPELINE.md) for the full technical specification.
 ## Tools (27 Python scripts)
 
 ### Foundation
-| Tool | Purpose |
-|------|---------|
-| `seed.py` | Generate seed concepts |
-| `gen_world.py` | Seed → world bible |
-| `gen_characters.py` | Seed + world → character registry |
-| `gen_outline.py` | Outline with beats and foreshadowing |
-| `gen_outline_part2.py` | Foreshadowing ledger |
-| `gen_canon.py` | Cross-reference hard facts |
-| `voice_fingerprint.py` | Voice analysis and discovery |
+| Tool                   | Purpose                              |
+| ---------------------- | ------------------------------------ |
+| `seed.py`              | Generate seed concepts               |
+| `gen_world.py`         | Seed → world bible                   |
+| `gen_characters.py`    | Seed + world → character registry    |
+| `gen_outline.py`       | Outline with beats and foreshadowing |
+| `gen_outline_part2.py` | Foreshadowing ledger                 |
+| `gen_canon.py`         | Cross-reference hard facts           |
+| `voice_fingerprint.py` | Voice analysis and discovery         |
 
 ### Drafting
-| Tool | Purpose |
-|------|---------|
+| Tool               | Purpose                                        |
+| ------------------ | ---------------------------------------------- |
 | `draft_chapter.py` | Write a single chapter with anti-pattern rules |
-| `run_drafts.py` | Batch sequential chapter drafter |
+| `run_drafts.py`    | Batch sequential chapter drafter               |
 
 ### Evaluation
-| Tool | Purpose |
-|------|---------|
-| `evaluate.py` | Mechanical slop scorer + LLM judge |
-| `adversarial_edit.py` | "Cut 500 words" analysis → classified cuts |
-| `compare_chapters.py` | Head-to-head Elo tournament |
-| `reader_panel.py` | 4-persona novel-level evaluation |
-| `review.py` | Opus dual-persona review with stopping conditions |
+| Tool                  | Purpose                                           |
+| --------------------- | ------------------------------------------------- |
+| `evaluate.py`         | Mechanical slop scorer + LLM judge                |
+| `adversarial_edit.py` | "Cut 500 words" analysis → classified cuts        |
+| `compare_chapters.py` | Head-to-head Elo tournament                       |
+| `reader_panel.py`     | 4-persona novel-level evaluation                  |
+| `review.py`           | Opus dual-persona review with stopping conditions |
 
 ### Revision
-| Tool | Purpose |
-|------|---------|
-| `gen_brief.py` | Auto-generate revision briefs from feedback |
-| `gen_revision.py` | Rewrite a chapter from a revision brief |
-| `apply_cuts.py` | Batch adversarial cut applicator |
+| Tool              | Purpose                                     |
+| ----------------- | ------------------------------------------- |
+| `gen_brief.py`    | Auto-generate revision briefs from feedback |
+| `gen_revision.py` | Rewrite a chapter from a revision brief     |
+| `apply_cuts.py`   | Batch adversarial cut applicator            |
 
 ### Art & Cover
-| Tool | Purpose |
-|------|---------|
-| `gen_art.py` | Art pipeline: style, curate, ornaments, vectorize |
-| `gen_art_directions.py` | Generate diverse art directions for curation |
-| `gen_cover_composite.py` | Text overlay on cover art |
-| `gen_cover_print.py` | Print-ready full-wrap cover (Lulu/KDP specs) |
+| Tool                     | Purpose                                           |
+| ------------------------ | ------------------------------------------------- |
+| `gen_art.py`             | Art pipeline: style, curate, ornaments, vectorize |
+| `gen_art_directions.py`  | Generate diverse art directions for curation      |
+| `gen_cover_composite.py` | Text overlay on cover art                         |
+| `gen_cover_print.py`     | Print-ready full-wrap cover (Lulu/KDP specs)      |
 
 ### Audiobook
-| Tool | Purpose |
-|------|---------|
+| Tool                      | Purpose                                        |
+| ------------------------- | ---------------------------------------------- |
 | `gen_audiobook_script.py` | Parse chapters into speaker-attributed scripts |
-| `gen_audiobook.py` | Generate multi-voice audio via ElevenLabs |
+| `gen_audiobook.py`        | Generate multi-voice audio via ElevenLabs      |
 
 ### Orchestration
-| Tool | Purpose |
-|------|---------|
-| `run_pipeline.py` | Full pipeline orchestrator (seed → finished novel) |
-| `build_arc_summary.py` | Regenerate arc summary from chapters |
-| `build_outline.py` | Regenerate outline from chapters |
+| Tool                   | Purpose                                            |
+| ---------------------- | -------------------------------------------------- |
+| `run_pipeline.py`      | Full pipeline orchestrator (seed → finished novel) |
+| `build_arc_summary.py` | Regenerate arc summary from chapters               |
+| `build_outline.py`     | Regenerate outline from chapters                   |
 
 ---
 
@@ -198,11 +200,11 @@ loop continues until the reviewer's items are mostly qualified hedges rather tha
 
 The pipeline uses three external services:
 
-| Service | Key | Used for |
-|---------|-----|----------|
-| Anthropic | `ANTHROPIC_API_KEY` | Writing, evaluation, review (Sonnet + Opus) |
-| fal.ai | `FAL_KEY` | Cover art and ornament generation (Nano Banana 2) |
-| ElevenLabs | `ELEVENLABS_API_KEY` | Multi-voice audiobook generation |
+| Service    | Key                  | Used for                                          |
+| ---------- | -------------------- | ------------------------------------------------- |
+| Anthropic  | `ANTHROPIC_API_KEY`  | Writing, evaluation, review (Sonnet + Opus)       |
+| fal.ai     | `FAL_KEY`            | Cover art and ornament generation (Nano Banana 2) |
+| ElevenLabs | `ELEVENLABS_API_KEY` | Multi-voice audiobook generation                  |
 
 Copy `.env.example` to `.env` and fill in your keys. Only the Anthropic
 key is required for the core pipeline. Art and audiobook are optional.

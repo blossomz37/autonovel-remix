@@ -266,8 +266,10 @@ def run_foundation(state: dict) -> dict:
         Path("/tmp/outline_output.md").write_text(res.stdout)
 
         step("Generating outline (part 2 — foreshadowing)...")
-        res = uv_run("gen_outline_part2.py", timeout=300)
-        (PROJECT_DIR / "lore" / "outline.md").write_text(res.stdout)
+        res_part2 = uv_run("gen_outline_part2.py", timeout=300)
+        
+        combined_outline = Path("/tmp/outline_output.md").read_text() + "\n\n" + res_part2.stdout
+        (PROJECT_DIR / "lore" / "outline.md").write_text(combined_outline)
 
         step("Generating canon...")
         res = uv_run("gen_canon.py", timeout=300)
