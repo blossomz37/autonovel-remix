@@ -11,6 +11,7 @@ PORT = 8080
 DIRECTORY = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PREVIEWABLE = {'.md', '.txt', '.json', '.tsv', '.toml'}
+TREE_EXCLUDE = {'eval_logs'}
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -51,6 +52,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         for item in sorted(dir_path.iterdir()):
             rel = f"/{rel_prefix}/{item.name}"
             if item.is_dir():
+                if item.name in TREE_EXCLUDE:
+                    continue
                 children = self._build_tree(item, f"{rel_prefix}/{item.name}")
                 if children:  # Only include non-empty directories
                     result.append({
