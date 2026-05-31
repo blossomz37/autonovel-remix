@@ -1,30 +1,67 @@
 ---
 file: CHANGELOG.md
-description: Log of notable changes and refactoring efforts across the autonovel pipeline.
-version: 1.0.0
+description: Log of notable changes and refactoring efforts across the autonovel-remix pipeline.
+version: 2.0.0
 created: 2026-05-31
 modified: 2026-05-31
-author: Antigravity
+author: Carlo
 ---
 
 # Changelog
 
 All notable changes to this project will be documented in this file.
+Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [Unreleased] - 2026-05-31
+---
+
+## [Unreleased] — feature/openrouter-sdk
 
 ### Added
-- **`AGENTS.md`**: Added an orientation guide for AI agents operating in the workspace, ensuring output predictability and establishing global guidelines.
-- **Gitignore Expansion**: Added comprehensive ignore rules for macOS, Linux, and Windows system files, as well as AI-specific `.gemini/` and `workspace_antigravity/` directories to prevent accidental commits.
-- **Workspace Reports**: Generated structural security and SAST scan reports inside `workspace_antigravity/` to track codebase health and AI pipeline safety.
+
+- **OpenRouter SDK integration**: Replaced raw `httpx` calls with the OpenAI SDK pointed at OpenRouter, introducing streaming support, structured reasoning configs, and per-call token/cost logging via a centralized `api_client.py` module.
+- **Reasoning & verbosity controls**: New `.env` variables (`OPENROUTER_REASONING_EFFORT`, `OPENROUTER_REASONING_MAX_TOKENS`, `OPENROUTER_REASONING_EXCLUDE`, `OPENROUTER_REASONING_ENABLED`, `OPENROUTER_VERBOSITY`) for fine-grained control over model reasoning behavior.
+- **Template system**: Created `templates/` directory with blank starter files (`seed-template.txt`, `world-template.md`, `characters-template.md`, `canon-template.md`, `outline-template.md`, `voice-template.md`, `genre-template.md`) so the pipeline can bootstrap a fresh novel without leftover lore.
+- **Genre flexibility**: Renamed `MYSTERY.md` to `genre.md` and added a `genre-template.md`, decoupling the pipeline from any single genre.
+- **Auto-select flag**: `seed.py` gained a `--auto-select` flag for fully autonomous seed selection during unattended runs.
+- **Live progress dashboard** (`scripts/dashboard.py` + `auto-novel-progress.html`):
+  - Three-panel IDE-style layout (file tree, markdown preview, inspector) with glassmorphism styling and rainbow colour scheme.
+  - Live markdown rendering with tabbed file preview.
+  - Resizable inspector panel showing `state.json`, `results.tsv`, and evaluation logs as collapsible sections.
+  - Word counts in the sidebar file tree, file-type icons, auto-expand chapters, and scroll-to-top on file switch.
+  - `SO_REUSEADDR` to prevent port-in-use crashes on restart.
+- **Workspace isolation**: Novel output (chapters, lore, briefs, eval logs, data, manuscript) now lives under `workspace/`, keeping the repo root clean across runs.
+- **Test fixtures**: Added `tests/v1-test/` (legacy lore snapshot) and `tests/v2-test/` (3-chapter mini-run with usage data) for regression testing.
+- **Export artifacts**: `workspace/manuscript.md` (combined novel), compiled outline, arc summaries, and PDF export.
+- **`reviews.md`**: Aggregated human review notes from revision rounds.
 
 ### Changed
-- **Script Reorganization**: Moved all 27 Python scripts out of the root directory into a dedicated `scripts/` module. This massively cleans up the project root and isolates pipeline execution logic.
-- **Data Reorganization**: Moved framework guidelines into a `framework/` directory and novel-specific context/lore files into a `lore/` directory.
-- **Configuration Refactoring**: Extracted all hardcoded system prompts, user prompts, and model hyperparameters (like `temperature` and `max_tokens`) out of the python scripts. These are now defined in cleanly separated `.toml` files located within the new `config/` directory. Python scripts use the `tomllib` standard library to dynamically load these values.
-- **Orchestration Execution Paths**: Updated `run_pipeline.py` and `run_drafts.py` to transparently route `uv run` commands into the new `scripts/` directory.
-- **Relative Path Resolution**: Updated `BASE_DIR` logic in all scripts from `Path(__file__).parent` to `Path(__file__).parent.parent` so they correctly find artifacts in the root directory.
-- **Documentation**: Updated the Quick Start examples in `README.md` to reflect the new `scripts/`, `lore/`, `framework/`, and `config/` folder routing.
+
+- **Config universalisation**: Removed all hardcoded novel-specific references ("Cass", "House of Bells", "fantasy") from every `.toml` config file, making the pipeline genre- and story-agnostic.
+- **Script API migration**: All 27 scripts in `scripts/` updated to call `api_client.py` instead of raw HTTP, gaining automatic retry, streaming, and cost tracking for free.
+- **README overhaul**: Full rewrite documenting the autonovel-remix architecture, OpenRouter model examples (updated for 2026 availability), and the new directory layout.
+- **Documentation cleanup**: Removed noise lines (system-generated edits, grep results, file views) from exported chat logs in `docs/chats/`.
+- **Removed deprecated code**: Deleted `scripts/refactor_api_calls.py` (one-time migration script, no longer needed).
+
+### Pipeline Run (Cozy Horror — 12 chapters)
+
+- **Foundation**: Achieved score 8.0 (lore 9.0) on iteration 1 after initial calibration runs.
+- **Drafting**: 12 chapters drafted, scores ranging 6.7–8.0, total ~27k words.
+- **Revision**: 3 automated revision cycles followed by 4 manual review rounds (ch06 focus), including mechanical cleanup passes.
+- **Final state**: `phase: complete`, 24 chapters capacity, 12 drafted, 3 revision cycles, exported manuscript.
 
 ### Security
-- **SAST Remediation (Shell Injection Risk)**: Refactored `subprocess.run` executions across `run_pipeline.py` and `run_drafts.py`. Removed `shell=True` usages, implemented `shlex.split` for safe command tokenization, and replaced insecure shell pipeline logic (like `grep` and `wc -w`) with robust, native Python file I/O.
+
+- **SAST remediation (shell injection)**: Removed `shell=True` from `subprocess.run` calls in `run_pipeline.py` and `run_drafts.py`. Replaced with `shlex.split` tokenisation and native Python I/O for shell operators.
+
+---
+
+## [1.0.0] — 2026-05-31 (Initial Commit)
+
+### Added
+
+- Full autonovel pipeline: 27 Python scripts covering seed generation, world-building, character creation, outlining, drafting, revision, adversarial editing, reader panels, art generation, and audiobook scripting.
+- TOML-based configuration in `config/` for all model hyperparameters and system prompts.
+- Framework documentation (`framework/`): `CRAFT.md`, `ANTI-SLOP.md`, `ANTI-PATTERNS.md`, `PIPELINE.md`, `WORKFLOW.md`, `SCRIPT_ARCHITECTURE.md`.
+- Lore directory (`lore/`) for per-novel context files.
+- `.gitignore` covering macOS/Windows/Linux system files, Python build artefacts, `.gemini/`, and `workspace_antigravity/`.
+- `AGENTS.md` orientation guide for AI agents operating in the workspace.
