@@ -35,9 +35,9 @@ def call_writer(prompt, max_tokens=None, temperature=None):
     )
 
 part1 = open('/tmp/outline_output.md').read()
-mystery = (PROJECT_DIR / "lore" / "MYSTERY.md").read_text()
+genre = (PROJECT_DIR / "lore" / "genre.md").read_text()
 
-prompt = CONFIG["prompts"]["user"].format(part1=part1, mystery=mystery)
+prompt = CONFIG["prompts"]["user"].format(part1=part1, genre=genre)
 
 print("Calling writer model...", file=sys.stderr)
 result = call_writer(prompt)

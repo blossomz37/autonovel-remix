@@ -17,8 +17,8 @@ user = """Build a complete chapter outline for this fantasy novel. Target: 22-26
 SEED CONCEPT:
 {seed}
 
-THE CENTRAL MYSTERY (author's eyes only -- reader discovers gradually):
-{mystery}
+GENRE CONVENTIONS & THEMATIC ANCHORS:
+{genre}
 
 WORLD BIBLE:
 {world}

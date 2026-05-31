@@ -37,7 +37,7 @@ def call_writer(prompt, max_tokens=None, temperature=None):
 seed = (PROJECT_DIR / "lore" / "seed.txt").read_text()
 world = (PROJECT_DIR / "lore" / "world.md").read_text()
 characters = (PROJECT_DIR / "lore" / "characters.md").read_text()
-mystery = (PROJECT_DIR / "lore" / "MYSTERY.md").read_text()
+genre = (PROJECT_DIR / "lore" / "genre.md").read_text()
 craft = (BASE_DIR / "framework" / "CRAFT.md").read_text()
 
 # Voice Part 2 only
@@ -47,7 +47,7 @@ part2_start = next(i for i, l in enumerate(voice_lines) if 'Part 2' in l)
 voice_part2 = '\n'.join(voice_lines[part2_start:])
 
 prompt = CONFIG["prompts"]["user"].format(
-    seed=seed, mystery=mystery, world=world, characters=characters, voice_part2=voice_part2, craft=craft
+    seed=seed, genre=genre, world=world, characters=characters, voice_part2=voice_part2, craft=craft
 )
 
 print("Calling writer model...", file=sys.stderr)

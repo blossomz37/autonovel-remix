@@ -17,24 +17,35 @@ API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 API_BASE = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/api/v1")
 
 def get_openrouter_cost(gen_id: str) -> float:
-    """Fetch the cost of a generation from OpenRouter."""
+    """Fetch the cost of a generation from OpenRouter with retries."""
     if not gen_id or "openrouter" not in API_BASE:
         return 0.0
     
-    # OpenRouter API might take a moment to record the generation
-    time.sleep(1)
+    max_retries = 3
+    delays = [2, 5, 10]  # wait 2s, then 5s, then 10s if needed
     
-    req = urllib.request.Request(
-        f"https://openrouter.ai/api/v1/generation?id={gen_id}",
-        headers={"Authorization": f"Bearer {API_KEY}"}
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=5) as response:
-            data = json.loads(response.read().decode())
-            if "data" in data and "total_cost" in data["data"]:
-                return float(data["data"]["total_cost"])
-    except Exception as e:
-        print(f"[Warning] Failed to fetch cost from OpenRouter: {e}", file=sys.stderr)
+    for attempt in range(max_retries):
+        time.sleep(delays[attempt])
+        
+        req = urllib.request.Request(
+            f"https://openrouter.ai/api/v1/generation?id={gen_id}",
+            headers={"Authorization": f"Bearer {API_KEY}"}
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=10) as response:
+                data = json.loads(response.read().decode())
+                if "data" in data and "total_cost" in data["data"]:
+                    return float(data["data"]["total_cost"])
+        except urllib.error.HTTPError as e:
+            if e.code == 404 and attempt < max_retries - 1:
+                # Normal behavior: OpenRouter hasn't indexed it yet. Retry.
+                continue
+            print(f"[Warning] Failed to fetch cost from OpenRouter (Attempt {attempt+1}/{max_retries}): {e}", file=sys.stderr)
+        except Exception as e:
+            print(f"[Warning] Failed to fetch cost from OpenRouter (Attempt {attempt+1}/{max_retries}): {e}", file=sys.stderr)
+            if attempt == max_retries - 1:
+                break
+            
     return 0.0
 
 def log_usage(script_name: str, model: str, prompt_tokens: int, completion_tokens: int, cost: float = 0.0):
