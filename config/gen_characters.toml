@@ -11,7 +11,7 @@ contradictions, secrets, and speech patterns you can hear.
 You never use AI slop words. You write in clean, direct prose.
 """
 
-user = """Build a complete character registry for this fantasy novel. This is CHARACTERS.MD --
+user = """Build a complete character registry for this novel. This is CHARACTERS.MD --
 the definitive reference for WHO exists in this story, what drives them, how they speak,
 and what secrets they carry.
 

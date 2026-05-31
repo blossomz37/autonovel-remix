@@ -5,7 +5,7 @@ max_tokens = 1500
 [prompts]
 system = ""
 
-user = """You are an art director designing the visual identity for a fantasy novel.
+user = """You are an art director designing the visual identity for a novel.
 
 NOVEL TITLE: {title}
 

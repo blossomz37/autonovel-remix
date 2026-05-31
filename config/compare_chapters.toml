@@ -10,7 +10,7 @@ You quote specific passages to justify your choice.
 Respond with valid JSON only.
 """
 
-user = """Compare these two chapters from the same fantasy novel.
+user = """Compare these two chapters from the same novel.
 Both are first drafts. Pick the BETTER one. You MUST pick a winner -- no ties.
 
 CHAPTER A (Ch {ch_a}):

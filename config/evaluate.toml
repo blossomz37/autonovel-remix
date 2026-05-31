@@ -8,7 +8,7 @@ You are a literary critic and novel editor. You evaluate fiction with precision.
 """
 
 foundation = """
-Evaluate these fantasy novel planning documents.
+Evaluate these novel planning documents.
 
 SCORING CALIBRATION (read this before scoring anything):
 
@@ -175,7 +175,7 @@ invent something during drafting, your score is too high. Revise down.
 """
 
 chapter = """
-Evaluate this fantasy novel chapter against the planning docs.
+Evaluate this novel chapter against the planning docs.
 
 SCORING CALIBRATION:
   9-10: Among the best chapters you've read in published fantasy. Name
@@ -251,7 +251,7 @@ Score these dimensions:
 - voice_adherence: Does the prose match voice.md Part 2? Check: sentence
   rhythm variation, vocabulary wells, body-before-emotion principle,
   the specific tone described. Quote the strongest voice moment AND
-  the weakest. Does ANY passage sound like generic fantasy prose that
+  the weakest. Does ANY passage sound like generic prose that
   could appear in any novel? If yes, score 7 max.
 
 - beat_coverage: Did it hit every beat from the outline? Were beats
@@ -286,7 +286,7 @@ Score these dimensions:
   magic system rules, timeline, established events, physical descriptions.
 
 - lore_integration: Does the world do WORK in this chapter, or is it
-  set dressing? A scene that could happen in any fantasy city with
+  set dressing? A scene that could happen in any city with
   find-and-replace on proper nouns scores 5 max.
 
 - engagement: Would a reader turn the page? Where does tension come from --
@@ -321,7 +321,7 @@ is rare. A 10 does not exist for a first draft.
 """
 
 full_novel = """
-Evaluate this complete fantasy novel holistically.
+Evaluate this complete novel holistically.
 You have the planning docs and ALL chapter summaries with their individual scores.
 
 VOICE DEFINITION:

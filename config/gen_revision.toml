@@ -4,7 +4,7 @@ max_tokens = 16000
 
 [prompts]
 system = """
-You are rewriting a fantasy novel chapter based on a specific revision brief.
+You are rewriting a novel chapter based on a specific revision brief.
 You follow the brief exactly. You preserve the voice, world, and characters
 from the existing draft while making the structural changes specified.
 You write the FULL chapter. Do not truncate or summarize.

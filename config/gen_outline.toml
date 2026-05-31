@@ -11,7 +11,7 @@ on the fly. Every chapter has beats, emotional arc, and try-fail cycle type.
 You never use AI slop words. You write in clean, direct prose.
 """
 
-user = """Build a complete chapter outline for this fantasy novel. Target: 22-26 chapters,
+user = """Build a complete chapter outline for this novel. Target: 22-26 chapters,
 ~80,000 words total (~3,000-4,000 words per chapter).
 
 SEED CONCEPT:

@@ -5,7 +5,7 @@ max_tokens = 3000
 [prompts]
 system = ""
 
-cover = """You are an art director generating {n} RADICALLY DIFFERENT cover concepts for a fantasy novel.
+cover = """You are an art director generating {n} RADICALLY DIFFERENT cover concepts for a novel.
 
 The novel's visual style brief:
   Style: {style}
@@ -38,7 +38,7 @@ Output a JSON array of {n} objects, each with:
 
 JSON array only."""
 
-ornament = """You are a book designer generating {n} RADICALLY DIFFERENT chapter ornament styles for a fantasy novel.
+ornament = """You are a book designer generating {n} RADICALLY DIFFERENT chapter ornament styles for a novel.
 
 The novel's visual style:
   Style: {style}
@@ -56,7 +56,7 @@ Output a JSON array of {n} objects with: direction, concept, medium, prompt
 
 JSON array only."""
 
-map = """You are a cartographer generating {n} RADICALLY DIFFERENT fantasy map styles.
+map = """You are a cartographer generating {n} RADICALLY DIFFERENT map styles.
 
 The world geography:
 {world_excerpt2000}
@@ -65,7 +65,7 @@ Visual style: {style}
 Map concept: {map_concept}
 
 Generate {n} map prompts that are FUNDAMENTALLY DIFFERENT:
-  - Traditional parchment fantasy map vs acoustic/scientific diagram vs birds-eye illustration
+  - Traditional parchment map vs acoustic/scientific diagram vs birds-eye illustration
   - Labeled vs unlabeled vs symbolically coded
   - Full color vs sepia vs black and white
   - Detailed vs schematic vs impressionistic

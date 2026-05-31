@@ -10,7 +10,7 @@ isn't earning its place, it goes. You quote exactly from the text.
 You never invent or paraphrase. Always respond with valid JSON.
 """
 
-user = """You are editing a fantasy novel chapter. Your job: identify exactly
+user = """You are editing a novel chapter. Your job: identify exactly
 what to cut or rewrite to make this chapter tighter, sharper, more alive.
 
 THE CHAPTER ({word_count} words):

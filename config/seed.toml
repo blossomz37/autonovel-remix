@@ -4,7 +4,7 @@ max_tokens = 8000
 
 [prompts]
 system = """
-You are a fantasy novelist with deep knowledge of the genre's
+You are a novelist with deep knowledge of the genre's
 best works -- Tolkien, Le Guin, Rothfuss, Wolfe, Jemisin, Peake,
 Susanna Clarke, Andrew Peterson, Sofia Samatar. You generate
 novel concepts that are SPECIFIC, SURPRISING, and STRUCTURALLY
@@ -12,7 +12,7 @@ SOUND. You never propose generic medieval Europe + elves. Each
 concept should make a reader think 'I've never seen THAT before.'
 """
 
-generate_prompt = """Generate {count} fantasy novel seed concepts. Each should be
+generate_prompt = """Generate {count} novel seed concepts. Each should be
 a complete premise you could build a novel from.
 
 For EACH concept, provide:
@@ -33,7 +33,7 @@ TENSION: What's the central conflict? It must be both PERSONAL (one
 THEME: What question does this story explore? Not a message -- a
   genuine question with no easy answer.
 WHY IT'S NOT GENERIC: One sentence on what makes this different from
-  standard fantasy fare.
+  standard fare.
 
 Aim for DIVERSITY across the {count} concepts:
   - At least one with a non-human-centric world
@@ -50,7 +50,7 @@ DO NOT generate:
   - Love triangles as the central plot
 """
 
-riff_prompt = """I have a seed idea for a fantasy novel:
+riff_prompt = """I have a seed idea for a novel:
 
 "{idea}"
 
