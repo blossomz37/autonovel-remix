@@ -216,7 +216,7 @@
       color: var(--c-violet);
     }
     .tree-file .file-icon { font-size: 0.7rem; opacity: 0.5; }
-    .tree-file .file-size {
+    .tree-file .file-words {
       margin-left: auto;
       font-size: 0.6rem;
       color: var(--text-dim);
@@ -376,10 +376,27 @@
     .eval-link:hover { color: var(--c-violet); }
 
     /* ── Inspector Sidebar ─────────────────── */
-    .inspector {
+    .inspector-wrapper {
       grid-area: inspector;
+      display: flex;
+      position: relative;
+    }
+
+    .inspector-resize {
+      width: 4px;
+      cursor: ew-resize;
+      background: transparent;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .inspector-resize:hover,
+    .inspector-resize.dragging {
+      background: linear-gradient(180deg, var(--c-violet), var(--c-teal));
+    }
+
+    .inspector {
+      flex: 1;
       background: var(--bg-inspector);
-      border-left: 1px solid var(--glass-border);
       overflow-y: auto;
       scrollbar-width: thin;
       scrollbar-color: rgba(255,255,255,0.06) transparent;
@@ -532,6 +549,8 @@
 
 
     <!-- Right: Inspector -->
+    <div class="inspector-wrapper">
+    <div class="inspector-resize" id="inspector-resize"></div>
     <aside class="inspector">
 
       <div class="inspector-section" id="sect-pipeline">
@@ -633,6 +652,7 @@
       </div>
 
     </aside>
+    </div>
   </div>
 
   <script>
@@ -647,6 +667,26 @@
       document.getElementById(id).classList.toggle('open');
     }
 
+    // ─── Inspector Resize ───────────────────
+    (() => {
+      const handle = document.getElementById('inspector-resize');
+      const app = document.querySelector('.app');
+      handle.addEventListener('mousedown', e => {
+        e.preventDefault();
+        handle.classList.add('dragging');
+        const onMove = e2 => {
+          const newW = Math.max(180, Math.min(500, window.innerWidth - e2.clientX));
+          app.style.setProperty('--inspector-w', newW + 'px');
+        };
+        const onUp = () => {
+          handle.classList.remove('dragging');
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('mouseup', onUp);
+        };
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      });
+    })();
 
 
     // ─── File Tree ──────────────────────────
@@ -694,8 +734,8 @@
         const file = document.createElement('div');
         file.className = 'tree-file' + (node.path === activeTabPath ? ' active' : '');
         file.dataset.path = node.path;
-        const sizeStr = node.size > 1024 ? (node.size / 1024).toFixed(1) + 'k' : node.size + 'b';
-        file.innerHTML = `<span class="file-icon">📄</span>${node.name}<span class="file-size">${sizeStr}</span>`;
+        const wc = node.words != null ? (node.words > 999 ? (node.words / 1000).toFixed(1) + 'k' : node.words) + 'w' : '';
+        file.innerHTML = `<span class="file-icon">📄</span>${node.name}<span class="file-words">${wc}</span>`;
         file.onclick = () => openFile(node.name, node.path);
         return file;
       }

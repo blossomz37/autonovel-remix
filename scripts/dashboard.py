@@ -76,11 +76,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         "children": children
                     })
             elif item.suffix.lower() in PREVIEWABLE and item.name not in FILE_EXCLUDE:
+                words = 0
+                try:
+                    text = item.read_text(encoding='utf-8', errors='ignore')
+                    words = len(text.split())
+                except Exception:
+                    pass
                 result.append({
                     "name": item.name,
                     "type": "file",
                     "path": rel,
-                    "size": item.stat().st_size
+                    "words": words
                 })
         return result
 
