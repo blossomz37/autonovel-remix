@@ -1,399 +1,377 @@
-# CHARACTERS.MD — THE INNKEEPER OF GREY HAVEN COVE
+# CHARACTERS.MD — HERON COVE CHARACTER REGISTRY
 
 ---
 
-## 1. ELSPETH CRANE — Protagonist / POV
+## 1. AGNES MURROW — Protagonist
 
-**Age:** 71 | **Role:** Innkeeper, reluctant investigator, last of her line
+**Age:** 92 (appears late 60s; she doesn't discuss this)
+**Role:** Retired B&B owner, reluctant investigator, fulcrum of the living/dead balance
 
-### Ghost → Wound → Lie → Want → Need
+### Ghost / Wound / Want / Need / Lie
 
-**Ghost:** At age nineteen, Elspeth Told her mother — sat with the body through the night, explained the options, waited. Her mother chose to disperse. She said goodbye clearly and then she was gone. Elspeth had expected her to stay. She had assumed her mother would stay. The house was there. The room was there. Elspeth was there. It wasn't enough.
+**Ghost:** Agnes bought the Bellweather Inn with money she doesn't discuss because she stole it — from the estate of a man in Portland who had stolen it first, from her mother, and from eleven other women. She told herself it was justice. She has never told anyone else.
 
-**Wound:** She believes, at a cellular level, that she is insufficient to hold the people she loves. That she is good company for the dead because the dead have no choice but to stay, but that the living will always find reason to leave.
+**Wound:** She built an entire life on a foundation she cannot examine without risking the life. So she doesn't examine anything too closely. She maintains. She tends. She does not dig.
 
-**Lie:** *The dead need me. The living don't.*
+**Lie:** *If I keep everyone fed and comfortable, nothing will fall apart.*
 
-**Want:** To solve Dora Vass's murder and protect Harrowfield House from the mainland developers — external, concrete, achievable.
+**Want:** Solve Carla Venn's murder quietly, before the county arrives in force and starts asking questions the inn cannot survive.
 
-**Need:** To let a living person in before she runs out of time. To understand that her exhaustion is not just the resonance drain but loneliness, and that loneliness is a choice she keeps making.
+**Need:** To stop managing the truth and start telling it — to herself first, then to the people she's been protecting by keeping them comfortable rather than honest.
 
-**Want/Need Tension:** Solving the murder requires trusting living people — Breda, Tomás, the mainland detective who may return. Every step of the investigation forces her toward the very thing her Lie tells her is pointless.
-
----
+**Tension:** Her want requires investigation, which requires digging. Her lie forbids digging. Every step toward solving the murder is a step toward examining herself.
 
 ### Three Sliders
 
-| Slider | Score | Justification |
-|---|---|---|
-| Proactivity | 6 | She investigates, but only after the spirits push her. She acts decisively once moving but needs the initial push. |
-| Likability | 9 | Warm, dry, genuinely funny. Readers will want to sit in her kitchen. |
-| Competence | 8 | Thirty years of managing impossible guests has made her extraordinarily good at reading people, extracting information, and staying calm when things get strange. |
+- **Proactivity: 7** — She doesn't want to act, but she acts decisively when she does. Sixty years of running a household of the dead has made her a problem-solver by reflex.
+- **Likability: 9** — She feeds people. She remembers what they need. She is the warmest person in a cold place. The reader will trust her before they should.
+- **Competence: 8** — Extraordinary at the specific skills her life requires. Outside those skills, she has blind spots the size of houses.
 
-**Arc Type:** Positive change arc. She will let someone in. It will cost her something. She will not regret it.
-
----
+### Arc Type
+**Negative-leaning positive.** She solves the murder. She does not fully dismantle the lie. She loosens one brick. That's enough for now, and the reader will feel the weight of what remains.
 
 ### Speech Pattern
 
-1. **Vocabulary:** Precise and old-fashioned. She uses words correctly that most people use approximately. *Penumbra. Contiguous. Vexing.*
-2. **Sentence length:** Medium to long in daylight. Short, declarative at night or under stress.
-3. **Contractions/formality:** Contractions with people she trusts. Formal register with strangers, which she uses as armor.
-4. **Verbal tics:** Begins refusals with *"I don't think that's—"* and then stops herself and says the thing directly. Also: *"Right."* as a full sentence, meaning she's filing something away.
-5. **Question ratio:** Low. She states. When she does ask questions, they're surgical.
-6. **Interruption:** Never interrupts. Waits. The pause before she responds is long enough to be uncomfortable.
-7. **Metaphor domain:** Domestic and nautical. Things are *anchored* or *adrift*, kitchens and tides.
-8. **Directness:** Direct about facts. Indirect about feelings, which she wraps in practical language.
+1. **Vocabulary:** Plain, precise. She knows the exact word but often chooses the simpler one. She learned early that people trust plain language.
+2. **Sentence length:** Short to medium. She doesn't trail off; she stops.
+3. **Contractions/formality:** Fully contracted, conversational, but never sloppy. "I don't" not "I do not," but also never "dunno."
+4. **Verbal tics:** Begins refusals with "Now." Ends observations with a quiet "Mm." Uses "that" as a soft intensifier: "That's a question."
+5. **Question ratio:** Low. She states. When she asks, it means something.
+6. **Interruption:** Rarely interrupts. When she does, it's surgical — one word that redirects the whole sentence.
+7. **Metaphor domain:** Domestic, weather, cooking. "That's a dough that won't rise." "He's been a cold front all week."
+8. **Directness:** Direct about logistics. Indirect about feelings. She will tell you exactly how to fix the boiler and never tell you she's frightened.
 
 **Example lines:**
-> "The body was found at high tide. The path to the top is forty minutes in dry weather. She didn't fall. Someone carried her down, which means there were two of them, or one of them was very strong, or she was already dead before she went over. Pick the one that frightens you least."
+> "Room's made up. Towels on the left hook, not the right — the right hook pulls from the wall if you're not careful. Dinner at seven. Now, I'm going to need you to tell me why you're actually here."
 
-> "Captain Fearne, I will hear your opinion on this matter at breakfast. Right now I need you to be quiet and let me think."
+> "Douglas thinks I should ask you directly. He's usually right about that sort of thing, which is irritating."
 
-> "I'm not lonely. I have excellent company." *(three-beat pause)* "Most of it is dead, but still."
-
----
+> "That's a question I've been not asking for about thirty years. Mm."
 
 ### Physical
 
-Tall, has shrunk slightly with age. Grey hair kept in a braid she's worn since forty. The grey cardigan, endlessly repaired. Hands that are always slightly cold — the resonance drain, though she attributes it to poor circulation. She moves quietly, a habit from decades of not wanting to interrupt spectral conversations she's inadvertently hearing. She tilts her head to the left when listening to the dead, which living people find unsettling because she appears to be listening to the wall.
+Compact, deliberate in her movements. White hair kept in a bun so tight it looks architectural. Hands that are always slightly flour-dusted or damp — she wipes them on her apron before she shakes yours, but not before she touches her dead husband's mug. Wears the same style of clothes she wore in 1975: dark wool skirts, cream blouses, a cardigan she replaces every two years with an identical one. Her eyes are the particular gray of the fog at noon — not dark, not light, and hard to hold.
 
-**Physical habits and tells:**
-- Touches the door frame of every room she enters. Started as a child's habit (Captain Fearne told her it was good luck). Now it's structural.
-- Bakes when she can't solve something. The kitchen at four a.m. means she's stuck.
-- When she's about to say something she knows will hurt someone, she looks at the ceiling first. Just for a second.
+### Physical Habits and Tells
 
----
+- Touches the nearest hard surface (counter, doorframe, table edge) when she's uncertain. Grounding herself.
+- When she lies, she straightens something nearby. A fork, a book, a chair.
+- Smells things before she eats them, every time, even things she made herself. The ozone migraine has made her protective of her nose.
+- Stands slightly sideways to rooms she's just entered — a habit from sixty years of not being sure who's in them.
 
 ### Secrets
 
-1. She knows Dora Vass did not disperse. She has felt a new presence in the house for five weeks — a cold that moves, a smell of unfamiliar perfume — but Dora has not spoken to her and Elspeth has not pushed, because pushing a new spirit to anchor costs her a week in bed, and she is afraid of what her bloodwork means, and she is rationing herself. She is waiting until she has no choice.
-
-2. The three flagged values in her bloodwork are not incidental. Her doctor has called twice. She hasn't called back. She knows, without the medical language for it, that the resonance drain has been doing something to her heart for a long time and that she is probably not going to die of old age in the way people mean when they say that.
-
----
+1. Agnes is 92. The chowder — specifically the unclassified kelp she uses — has been slowing something in her since the 1970s. She knows this. She has not told Douglas. She does not know what stops when she stops eating it.
+2. She knows who Room 4 is. She has known for eleven years. She has not written his name in the guestbook because writing it would require acknowledging what she did to put him there.
 
 ### Key Relationships
 
-- **Captain Fearne:** Her most demanding guest and, in a way she would never articulate, her longest relationship. He is difficult and loyal and has been watching over her since she was seven. She resents him and would be devastated to lose him.
-- **Lily (spectral, age 9):** The child she anchored against Anneliese's advice. Elspeth's protective instinct here is fierce and slightly irrational. Lily is the wound made visible.
-- **Anneliese Veld:** The estrangement costs Elspeth more than she admits. Anneliese is the last living person who understood her fully.
-- **Dora Vass:** The mystery and, possibly, the catalyst. Dora came here for a reason and the reason is tangled in Elspeth's history.
+- **Douglas:** Her anchor and her blind spot. She trusts his judgment on people and uses that trust to avoid forming her own.
+- **Room 4:** The secret that lives in her house.
+- **Gareth Croft:** The cold war is about the guestbook. He knows it exists. She knows he knows. What he doesn't know is what's in it.
+- **Carla Venn (dead):** The woman Agnes is waiting for. When Carla finally appears, Agnes will have to decide how much truth the investigation can hold.
 
-**Thematic question:** *What does it mean to care for the dead, and what does it cost the living?*
-
----
-
-## 2. CAPTAIN ALDOUS FEARNE — Primary Antagonist
-
-**Age at death:** 58 | **Died:** 1891 | **Role:** The house's dominant spectral presence; opposes Elspeth's investigation
-
-### Ghost → Wound → Lie → Want → Need
-
-**Ghost:** Fearne was a merchant captain who ran a route between the Cove and the Baltic ports. He was complicit in something during his last voyage — not quite a crime, but the kind of decision that costs someone else everything. He returned to the Cove, anchored to his study in Harrowfield House (then a private home), and has been here since. He has never told anyone what the decision was.
-
-**Wound:** He chose self-preservation over justice once. He has been a just and honorable man in every interaction since, but the original act is still there, and he knows that his staying — his *weight*, his influence, his capacity to knock things off shelves — is partly powered by that unresolved guilt.
-
-**Lie:** *The past is settled. What matters is how you behave now.*
-
-**Want:** To prevent Elspeth's investigation from surfacing whatever Dora Vass was actually researching — because Dora was researching *him*. His last voyage. What he did.
-
-**Need:** To tell the truth about what happened. The staying is costing him more than he admits. His anchor is his guilt, and guilt is a diminishing fuel.
+### Thematic Role
+*What does it cost to keep everyone comfortable?*
 
 ---
+
+## 2. GARETH CROFT — Primary Antagonist
+
+**Age:** 67
+**Role:** Descendant of the founding family, self-appointed steward of the town's order
+
+### Ghost / Wound / Want / Need / Lie
+
+**Ghost:** Gareth's father told him, on his deathbed, that the Croft family had made a specific arrangement in 1743 — that the Quiet Town's original dead had agreed to remain below the fog line in exchange for something the Crofts were supposed to provide in perpetuity. His father died before saying what. Gareth has spent forty years trying to reconstruct the terms of a contract he doesn't have.
+
+**Wound:** He is responsible for maintaining something he doesn't understand, and he cannot admit he doesn't understand it, because the town's trust in him depends on the appearance of knowledge.
+
+**Lie:** *The dead must be managed, or they will take everything.*
+
+**Want:** Get the guestbook. It may contain the record of the original arrangement, or evidence of what Agnes knows that he doesn't.
+
+**Need:** To admit that stewardship requires honesty, not control — and that his family's arrangement may have already been broken.
+
+**Tension:** He wants the guestbook to gain control. If he got it, he'd learn things that would destroy his authority entirely.
 
 ### Three Sliders
 
-| Slider | Score | Justification |
-|---|---|---|
-| Proactivity | 8 | He has been actively shaping events at Harrowfield House for 130 years. He is the most proactive character in the book. |
-| Likability | 7 | Genuinely funny, genuinely protective of Elspeth, clearly capable of love. The antagonism is earned. |
-| Competence | 9 | He has been watching, listening, and maneuvering for over a century. He is very good at this. |
+- **Proactivity: 9** — He is always moving, always working the angles. The murder is, to him, an opportunity.
+- **Likability: 4** — He's not cruel. He's certain, which is worse. Readers will understand him before they like him, if they like him at all.
+- **Competence: 7** — Very good at managing people. Genuinely knowledgeable about the town's history. Wrong about the most important thing.
 
-**Arc Type:** Redemption arc. He will tell the truth. It will not disperse him. This surprises him.
-
----
+### Arc Type
+**Flat, with a crack at the end.** He does not change. But the last scene he appears in, something in his face shifts, and the reader will wonder if it's the beginning of something or the end.
 
 ### Speech Pattern
 
-1. **Vocabulary:** Victorian maritime, formal, occasionally archaic. Uses *shall* where others use *will*. Refers to people by surname until he respects them, then by first name, which he treats as a ceremony.
-2. **Sentence length:** Long, structured, periodic sentences. He builds to his point.
-3. **Contractions:** Almost none. Contraction is a sign of agitation.
-4. **Verbal tics:** *"I put it to you—"* before an argument. *"Mmm."* as a full response when he disagrees but won't say so yet.
-5. **Question ratio:** He asks questions rhetorically and then answers them himself.
-6. **Interruption:** Interrupts constantly and without apology. Considers it engagement, not rudeness.
-7. **Metaphor domain:** Navigation, weather, cargo, the behavior of ships in difficult water.
-8. **Directness:** Direct about everything except his own culpability.
+1. **Vocabulary:** Elevated, deliberate. He uses formal constructions as a dominance signal.
+2. **Sentence length:** Long, structured. He builds arguments in real time.
+3. **Contractions:** Minimal. "I do not" and "you will not."
+4. **Verbal tics:** "Historically speaking." "You'll understand that." Refers to the town as "the Cove" with a proprietorial weight.
+5. **Question ratio:** He asks questions he already knows the answers to.
+6. **Interruption:** Talks over people by completing their sentences incorrectly, then proceeding as if he got it right.
+7. **Metaphor domain:** Architecture, property, inheritance. "That's a load-bearing wall, Agnes." "Some debts transfer with the deed."
+8. **Directness:** Indirect about motives, direct about demands.
 
 **Example lines:**
-> "I put it to you, Elspeth, that a woman who has managed this house for thirty-four years without catastrophe is perhaps better placed than a mainland constable to determine what constitutes evidence. Mmm."
+> "You'll understand that the county's interest in the foundation survey is not something I can hold off indefinitely. Historically speaking, the Bellweather has always been a matter of shared concern."
 
-> "She was asking questions she had no right to ask. I did not harm her. I want that stated clearly. I am not capable of harm — not of that kind, not anymore. But I will not pretend I was sorry when she stopped asking."
+> "I'm not asking for the book. I'm asking you to acknowledge that some records belong to the town, not to the person who happens to be holding them at the moment."
 
-> "The sea does not care what you meant to do. It cares what you did. I have always found this clarifying."
-
----
+> "Some debts transfer with the deed, Agnes. You knew that when you bought it."
 
 ### Physical
 
-Visible as a solidly built man with a grey beard trimmed short, wearing a coat that is correct for 1891 and wrong for every decade since. He smells of cedar and low tide. His edges are slightly less sharp in the afternoon — the resonance thins in daylight — and sharpest at night, when he can occasionally be heard pacing the east wing. When he is agitated, the temperature in his study drops by four degrees. Elspeth keeps a thermometer on the mantelpiece there and checks it the way other people check the weather.
-
-**Tells:** Clasps his hands behind his back when he's deciding whether to lie by omission. Speaks more formally when frightened.
-
----
+Tall, with the kind of posture that comes from believing you're being watched. Silver hair, kept short. He wears canvas work jackets that cost more than they look like they do. His hands are always clean. He shakes hands like he's appraising the grip. Has a habit of standing in doorways rather than entering rooms — he likes the position of being able to leave.
 
 ### Secrets
 
-1. Dora Vass was his great-great-grandniece. She knew this. He knew this. She came to the Cove specifically to confront him about what happened on the *Maren Voss* (named for the first ghost's wife — the ship connection is not coincidence) in the winter of 1890.
+1. The Croft arrangement was not a contract with the Quiet Town dead. It was a contract *against* them — a promise to keep them below the fog line by force if necessary. The mechanism for that force is what Gareth is missing.
+2. He has been inside the Bellweather basement. Once, in 1987, before Agnes changed the locks. He came back up the stairs and drove home and did not sleep for four days. He has never told anyone what he saw.
 
-2. He knows who killed her. He has known since the night it happened. He cannot tell Elspeth without confessing his own role in the events that made her a target. He has been calculating whether the confession is survivable — whether the truth will disperse him — for six weeks.
-
----
-
-### Key Relationships
-
-- **Elspeth:** He has watched over her since she was seven. His protectiveness is genuine and has become a way of avoiding his own reckoning. She is his excuse to stay.
-- **The Spectral Council:** He chairs it by force of personality. Three members know parts of his secret. None have said anything, because Rule Three only applies when they *speak*.
-- **Tomás Reidy:** Fearne has been actively working against Tomás's mapping project. Two of Tomás's notebooks have gone missing. Fearne is not apologetic.
-
-**Thematic question:** *Can a person who did something wrong once be good? Does staying — refusing to let go — require a clean conscience?*
+### Thematic Role
+*What happens when stewardship becomes possession?*
 
 ---
 
-## 3. CAPTAIN FEARNE'S FOIL — LILY MARSH — Core Confidant
+## 3. DOUGLAS MURROW — Core Ally / Confidant
 
-**Age at death:** 9 | **Died:** 1943 | **Role:** Elspeth's closest companion; the spirit she anchored; the truth-teller
+**Age:** Died at 71; has been 71 for 33 years
+**Role:** Agnes's dead husband, her sounding board, her most reliable blind spot
 
-*Lily is the character who challenges Elspeth's Lie most directly, because she is the proof of it: Elspeth kept her here, and Lily knows it, and Lily has chosen to be kept, and neither of them talks about what that means.*
+### Ghost / Wound / Want / Need / Lie
 
-### Ghost → Wound → Lie → Want → Need
+**Ghost:** Douglas was a gentle man who spent his whole life slightly behind Agnes — slower to decide, slower to act, always catching up. He loved this about himself and resented it in the same breath.
 
-**Ghost:** Lily drowned in the harbor in 1943 when she was nine. Her mother dispersed within the 72-hour window — made the choice quickly, clearly, and left. Lily stayed without understanding why. Elspeth's mother was the one who Told her. Elspeth, at age eight months, was in the house. Lily has been here longer than Elspeth has been alive.
+**Wound:** He died before he told Agnes the one thing he'd been meaning to say for twenty years: that he knew about Room 4. Not everything, but enough.
 
-**Wound:** She has been nine years old for eighty years. She understands more than a nine-year-old should and cannot process it the way an adult would.
+**Lie:** *Agnes knows best. My job is to support her.*
 
-**Lie:** *I am fine here. I don't want what I can't have.*
+**Want:** Keep Agnes safe through the investigation.
 
-**Want:** To understand what Dora Vass was looking for — she was the one who spoke to Dora most, who showed her around, who liked her. She wants justice for Dora in the way children want justice: completely, without compromise.
-
-**Need:** To be seen as she actually is — not as a child to be protected, but as someone who has been watching this town for eighty years and knows things nobody else knows.
-
----
+**Need:** Tell her what he knows, even though it will hurt her, because she cannot solve this without it.
 
 ### Three Sliders
 
-| Slider | Score | Justification |
-|---|---|---|
-| Proactivity | 7 | She drives several key plot revelations because she is the only one with no stake in concealment. |
-| Likability | 10 | She is nine years old and has been nine for eighty years. She is devastating. |
-| Competence | 6 | She knows everything but lacks the framework to organize it. She needs Elspeth to make it useful. |
+- **Proactivity: 3** — He reacts. He worries. He occasionally pushes, but gently.
+- **Likability: 10** — He is the warmth of the book. Every scene with Douglas is the locked cabin, not the storm.
+- **Competence: 6** — Wise about people. Useless about facts. He has the emotional intelligence Agnes lacks and none of the investigative instinct she has.
 
-**Arc Type:** Flat arc with a single revelation. She doesn't change — she reveals.
-
----
+### Arc Type
+**Positive, minor.** He tells her. It costs him. He does it anyway.
 
 ### Speech Pattern
 
-1. **Vocabulary:** A child's vocabulary with occasional adult words she's absorbed without fully understanding their register.
-2. **Sentence length:** Short. Declarative. She doesn't build arguments; she states observations.
-3. **Contractions:** Always. She is entirely informal.
-4. **Verbal tics:** *"The thing is—"* before something important. Repeats the last word of a sentence when she's uncertain.
-5. **Question ratio:** High. She asks questions constantly, not rhetorically.
-6. **Interruption:** Interrupts without malice. Doesn't notice she's done it.
-7. **Metaphor domain:** None. She is almost entirely literal.
-8. **Directness:** Completely direct. She has no social reason not to be.
+1. **Vocabulary:** Warm, unpretentious. Hardware store and fishing vocabulary mixed with thirty years of listening to Agnes's guests.
+2. **Sentence length:** Medium, with digressions he doesn't finish.
+3. **Contractions:** Full. He's never formal.
+4. **Verbal tics:** "The thing is—" (and then he doesn't always finish). "You know what I think." Calls Agnes "Ag" when he's worried, her full name when he's serious.
+5. **Question ratio:** High. He asks to stay connected, not to gather information.
+6. **Interruption:** Never interrupts. Waits past the comfortable pause.
+7. **Metaphor domain:** Weather, boats, the physical work of the house.
+8. **Directness:** Indirect about hard things. Will circle a difficult truth three times before landing on it.
 
 **Example lines:**
-> "The thing is, she wasn't looking at the view. People who come up the headland to look at the view look at the view. She was looking at the ground. The whole time, she was looking at the ground."
+> "Ag, the thing is — I don't think you've actually looked at who's been in that room. Not really looked."
 
-> "Captain Fearne is lying. Not lying lying, but not saying the thing. You can tell because he gets more polite. He's very polite right now."
+> "You know what I think? I think you're doing that thing where you fix the problem in front of you so you don't have to look at the problem behind it."
 
-> "Are you going to go to sleep again? You always go to sleep when it gets hard. I don't mean that mean. I just mean you do."
+> "Agnes. I need you to sit down. I need you to not straighten anything while I talk."
 
----
+### Physical
+
+Stocky, with a ghost's tendency toward translucency in strong sunlight. Wears what he died in: paint-stained work clothes and the particular boots Agnes has tried to get him to change for three decades. Carries his coffee mug. Always. When he's distressed, the mug develops a new hairline crack.
 
 ### Secrets
 
-1. She spoke to Dora Vass for two hours on Dora's second evening. Dora told her things she hasn't told Elspeth yet — not because she's hiding them, but because nobody has asked her the right question.
-2. She knows what's on the south headland. She went there once, years ago, before she fully understood her range limit. The experience frightened her badly. She has never gone back. She describes it only as *"the place where the quiet is wrong."*
+1. He knows Room 4's name. He recognized him when he moved in, three years after Douglas's own death. He has been deciding how to tell Agnes ever since.
+2. He can, occasionally, communicate with one of the drifters — the one leaving patterns of objects for Agnes. He doesn't know how. He hasn't told Agnes because he doesn't know what it means yet.
+
+### Thematic Role
+*What do we owe the people we love when the truth would hurt them?*
 
 ---
 
-## 4. BREDA CONNOLLY — Institutional Antagonist
+## 4. DEPUTY SHERIFF NORA VALE — Institutional Antagonist
 
-**Age:** 67 | **Role:** Chair of the Residents' Association; the system's human face
+**Age:** 38
+**Role:** The county's investigator, sent to solve a murder in a town that will not cooperate
 
-### Ghost → Wound → Lie → Want → Need
+### Ghost / Wound / Want / Need / Lie
 
-**Ghost:** Breda came to the Cove forty years ago as a solicitor's clerk and stayed because she fell in love with a fisherman who died young. She could not hear him after his death — she is one of the living who gets only impressions, feelings — and she has spent four decades in a town where everyone else seems to have access to something she doesn't.
+**Ghost:** Nora volunteered for the Heron Cove call because her grandmother, who raised her, used to talk about the Cove. Talked about it in the specific way people talk about places they had to leave. Nora never pushed for details. Her grandmother died with them.
 
-**Wound:** She is perpetually on the outside of the Cove's most important conversations. She manages this by controlling what she can: the legal structures, the negotiations, the paperwork.
+**Wound:** She has spent her career making the world legible — evidence, timelines, cause and effect. The Cove makes her methods fail, and she cannot tell if it's the town or her.
 
-**Lie:** *If I control the framework, I control what happens inside it.*
+**Lie:** *If I follow the procedure correctly, the answer will be there.*
 
-**Want:** To negotiate a deal with the mainland that saves the harbor wall and preserves the Cove's autonomy — on paper, the right goal.
+**Want:** Close the Carla Venn case with a clean, prosecutable answer.
 
-**Need:** To stop making decisions about the dead without asking them. Her deal with the mainland involves a compromise on spectral civic standing that she has not disclosed because she knows the spirits would refuse it and she has decided she knows better.
-
----
+**Need:** Accept that some truths require a different kind of rigor than the kind she was trained for.
 
 ### Three Sliders
 
-| Slider | Score | Justification |
-|---|---|---|
-| Proactivity | 9 | She is always three moves ahead. The plot moves partly because she has been moving pieces for months. |
-| Likability | 5 | Understandable, even sympathetic, but she keeps making the same mistake: deciding for people who should decide for themselves. |
-| Competence | 8 | Extremely competent within her framework. The framework is the problem. |
+- **Proactivity: 8** — She drives every scene she's in. She has a checklist and she is working it.
+- **Likability: 7** — She's fair, she's not unkind, and she's genuinely trying to do right by a dead woman. The reader roots for her even when she's in Agnes's way.
+- **Competence: 9** — Excellent investigator. Her competence is the problem — she's too good at the wrong tools.
 
-**Arc Type:** Negative arc. She gets what she negotiated for. It costs more than she planned.
-
----
+### Arc Type
+**Positive.** She doesn't solve the murder — Agnes does — but she ends the book with a framework she didn't arrive with.
 
 ### Speech Pattern
 
-Formal, precise, lawyerly. Long conditional sentences. Uses passive voice when assigning blame. Says *"I think we'd all agree"* before stating something nobody agreed to. Never raises her voice. The quieter she gets, the more dangerous she is.
+1. **Vocabulary:** Procedural, precise. She uses the correct term for everything.
+2. **Sentence length:** Short and declarative. She writes the way she talks.
+3. **Contractions:** Moderate. Professional but not stiff.
+4. **Verbal tics:** "Walk me through that." "What time, exactly." Silence as a tool — she waits after questions.
+5. **Question ratio:** Very high. She is always gathering.
+6. **Interruption:** Interrupts to clarify, not to dominate.
+7. **Metaphor domain:** None. She avoids metaphor. This is notable.
+8. **Directness:** Maximally direct. She finds indirectness rude.
 
-> "I think we'd all agree that Dora Vass's presence here was, at minimum, poorly timed. I'm not suggesting anyone is responsible for that. I'm suggesting that how we handle the next few weeks will determine whether this Cove exists in ten years in any form worth preserving."
+**Example lines:**
+> "Walk me through the morning you found her. Not the summary — the actual morning."
 
----
+> "I understand the town has its own ways of handling things. I'm not here to change that. I'm here because a woman is dead and someone killed her, and that person is still somewhere."
 
-### Secrets
+> "You just looked at the wall when I asked about your other guests. What's on the other side of that wall?"
 
-1. She knew Dora Vass was coming because she *invited* her — not directly, but through a mainland solicitor who specializes in inheritance claims. Dora had a legal claim to something in the Cove. Breda intended to use that claim as leverage in the harbor wall negotiation. She did not intend for Dora to die.
+### Physical
 
-2. The deal she's negotiating includes a clause that would reclassify spirits without registered anchors as *undomiciled*, making them eligible for dispersal without cause. She has told herself this only affects the marginal cases. It affects forty-seven spirits.
-
----
-
-## 5. TOMÁS REIDY — The Outsider / Wildcard
-
-**Age:** 31 | **Role:** Development consortium agent; the mainland's eyes in the Cove
-
-### Ghost → Wound → Lie → Want → Need
-
-**Ghost:** Tomás grew up in a city. His grandmother told him stories about a coastal town where the dead stayed, and he dismissed them until he was twenty-eight and she died and he went to her apartment and felt, for the first time, that specific quality of absence — the way a room knows it's empty — and understood that she was gone and he had never asked her anything he should have asked.
-
-**Wound:** He is haunted by the ordinary kind of haunting, the kind with no resonance and no window and no second chance.
-
-**Lie:** *Information is neutral. Mapping what exists doesn't change it.*
-
-**Want:** To complete his survey, deliver his report, and advance his career.
-
-**Need:** To understand that what he's mapping is not data. That the 247 spirits in his spreadsheet are people, and that the use his employers intend for his survey will end them.
-
----
-
-### Three Sliders
-
-| Slider | Score | Justification |
-|---|---|---|
-| Proactivity | 7 | He came here with a plan and is executing it methodically. |
-| Likability | 6 | Genuinely kind in person, genuinely oblivious about consequences. Hard to hate. |
-| Competence | 7 | Good at his job. His job is the problem. |
-
-**Arc Type:** Positive change arc. He will choose a side. It will cost him his career. He will not be certain it was right, which is more honest than certainty would be.
-
----
-
-### Speech Pattern
-
-Urban, educated, slightly too careful — the speech of someone who has been trained to present well. Uses *"so"* to begin sentences when he's nervous. Asks a lot of questions because he's been taught that asking questions is how you get information, not understanding that in the Cove, questions are an act of relationship.
-
-> "So I'm not here to cause problems. I want to be clear about that. I'm just — I'm trying to understand what's here. Accurately. Before anyone else does it less carefully."
-
-> "Does it bother you? That they're always — that they're *here*? I'm not asking to be rude. I just genuinely don't know how you — how anyone —" *(stops)* "Sorry. That was a stupid question."
-
----
+Medium height, economical build. Brown hair in a practical braid. Wears her uniform like it's load-bearing. Has a habit of touching her notepad before she asks a hard question — not opening it, just touching it. Her grandmother's ring on her right hand, which she twists when she's thinking. She smells, faintly, of the particular institutional coffee of the Kettle Falls sheriff's office, and Agnes notices this and finds it sad.
 
 ### Secrets
 
-1. He has heard something. Once, two months ago, in the pub. A woman's voice, very clear, saying his grandmother's name. He has told no one. He has been back to the pub every evening since.
+1. Her grandmother was born in Heron Cove. Left in 1962. Nora has her grandmother's last name, not her grandfather's, and has never questioned why.
+2. On her second night in the Cove, she had a full conversation with a man in the dining room who she assumed was a local. She wrote down everything he said. She has not yet realized he isn't living.
 
-2. He has already sent one partial report to the consortium. It contains enough information to begin proceedings against twelve spirits. He filed it before he understood what it would be used for. He cannot unfiled it. He is trying to figure out if there's a way to make it not matter.
-
----
-
-## 6. PASTOR ANNELIESE VELD — Supporting Character
-
-**Age:** 52 | **Role:** Theologian, estranged friend, moral counterweight
-
-Dutch, angular, wears her hair short and her collars high. Has the manner of someone who has thought carefully about every position she holds and will not be moved by emotion but can be moved by a better argument. She and Elspeth disagree about Lily. The disagreement is: Anneliese believes Elspeth anchored Lily because Elspeth needed her, not because Lily needed to stay. She is not wrong. She is also not entirely right.
-
-**Speech:** Long, careful, theological. Asks *"What do you believe?"* as a genuine question, not a challenge. Uses *"I think"* and *"I believe"* precisely — she distinguishes between what she knows and what she holds.
-
-> "I'm not saying she should have dispersed. I'm saying you didn't ask her. You were there, you were present, you were paying attention — and for a new spirit in the window, that attention is almost impossible to resist. You didn't ask. You just *were*, and she anchored to you, and now she's nine years old forever and you call that a rescue."
-
-**Secret:** She has been corresponding with a theologian at a mainland university who believes the Cove's resonance is weakening — not the fog, the *resonance* — and that within twenty years the staying will no longer be possible. She has not told the spirits. She has not told Elspeth. She goes to the church every night and sits with this knowledge alone.
-
-**Thematic role:** *What do we owe the dead, and is keeping them here love or selfishness?*
+### Thematic Role
+*What does justice look like when the evidence is impossible?*
 
 ---
 
-## 7. DORA VASS — The Victim / Catalyst
+## 5. CARLA VENN — The Wildcard / The Outsider
 
-**Age at death:** 44 | **Role:** The murder victim; possibly still present
+**Age:** Died at 34
+**Role:** The murder victim; the question the book is built around; eventually, a ghost who complicates everything
 
-Red-haired, wore practical clothes that suggested she'd done fieldwork before. Paid cash. Asked questions with the precision of someone who had prepared extensively. Lily liked her immediately. Captain Fearne watched her from the first evening.
+### Ghost / Wound / Want / Need / Lie
 
-She was Fearne's great-great-grandniece, a maritime historian, and she had spent three years tracing what happened on the *Maren Voss* in 1890. She came to the Cove not to expose Fearne — she was past exposure, she wanted *understanding* — but to find out whether the thing he did had consequences that were still running. It did. They are.
+**Ghost:** Carla came to Heron Cove on purpose. She was a researcher — not academic, not official — who had been tracking the Cove for two years from a distance, following the trail of her older brother, who came to the Cove in 2016 and never left. Not died. Just never left.
 
-**What she found:** Evidence that the 1801 Accommodation Act was written specifically to protect a particular spirit — not Pieter Voss, but someone whose staying was politically inconvenient and whose dispersal would have been more so. The Act was a legal maneuver, not a moral one. The implications for current property law, for the harbor wall negotiation, for Breda's deal, are significant.
+**Wound:** She spent two years being told her brother chose to disappear, that he was troubled, that she was making something out of nothing. She stopped trusting her own perception.
 
-**Whether she stayed:** She is in the house. She has not spoken. She is afraid of what she knows and what it costs to know it. Elspeth will reach her in the third act, and it will cost Elspeth a week in bed, and it will be worth it.
+**Lie:** *If I find enough evidence, someone will have to believe me.*
+
+**Want:** Find her brother, or find out what happened to him.
+
+**Need:** To accept that some answers change the question entirely — and that her brother may be fine, in a way she doesn't have a framework for yet.
+
+### Three Sliders (alive)
+
+- **Proactivity: 10** — She drove to Heron Cove without a reservation. She is the engine of the plot.
+- **Likability: 8** — She's prickly and exhausted and right, which readers love.
+- **Competence: 7** — Good researcher. Terrible at reading rooms. She walked into the most dangerous situation in the book and took notes.
+
+### Arc Type
+**Posthumous positive.** She doesn't get her arc while alive. She gets it as a ghost, when she finally talks to her brother — who is, in fact, in Heron Cove, in a way she didn't expect — and understands what she was actually looking for.
+
+### Speech Pattern (alive, from her notes and Agnes's memory)
+
+1. **Vocabulary:** Research-inflected. She says "documented" and "consistent with" and "as of."
+2. **Sentence length:** Long when writing, short when frightened. The last entry in her notebook is four words.
+3. **Contractions:** Full, fast. She talked quickly.
+4. **Verbal tics:** "Right, so—" to start explanations. "That tracks" as affirmation. Underlines things twice when she's certain.
+5. **Question ratio:** Even split. She asked and stated in alternation.
+6. **Interruption:** Interrupted herself constantly, mid-thought.
+7. **Metaphor domain:** Geographic, cartographic. She thought in maps.
+8. **Directness:** Direct to the point of social obliviousness.
+
+**As a ghost (when she finally appears):** Quieter. The speed is gone. She speaks like someone reading from a document she's still processing.
+
+**Example lines (alive, from memory/notes):**
+> "Right, so the fog line corresponds almost exactly to the 40-foot contour, which tracks with the harbor basin's — sorry, I'm getting ahead of myself. Does your basement predate the 1743 survey? That's actually the question."
+
+> "I'm not here to write about this. I'm here to find my brother. Those are different things and I need you to understand that."
+
+### Physical
+
+Dark-haired, with the particular pallor of someone who has been sleeping badly for two years. Wore practical clothes with too many pockets. Carried two notebooks — one for facts, one for what she called "the other category." Her ghost, when it appears, is missing the notebooks. She keeps reaching for them.
+
+### Secrets
+
+1. Her brother is not missing. He is one of the four drifters. He became untethered when someone destroyed his anchor, and Carla's arrival — and death — is not a coincidence.
+2. The last four words in her notebook are: *Room 4 knows everything.*
+
+### Thematic Role
+*What does it mean to look for someone who is present in a form you can't recognize?*
 
 ---
 
-## 8. CORMAC DOYLE — Supporting Character
-
-**Age:** 48 | **Role:** Barman at The Anchor and Wheel; the Cove's social memory
-
-Broad, unhurried, has been behind the bar since he was twenty. Sets out two glasses of nothing every evening without ceremony. Knows everyone's business and considers it a professional obligation not to share it. He is one of the few living people in the Cove who can hear the dead moderately well — not sentences, but moods, intentions, the emotional weather of a room.
-
-**Speech:** Short. Declarative. Answers questions with questions when he doesn't want to answer. Uses silence as punctuation.
-
-> "She was in here the second night. Sat at the end. Bette talked to her for an hour." *(pause)* "I don't know what Bette said. I don't ask Bette questions. She doesn't like it."
-
-**Secret:** He knows Tomás has been coming in looking for something. He knows what Tomás heard. He has not told Tomás what it means because he is waiting to see what Tomás will do with it — whether he's the kind of person who deserves to know.
-
-**Thematic role:** *The ordinary person who maintains the world as it is. The question is whether that's wisdom or cowardice.*
+## 6. SUPPORTING CHARACTERS
 
 ---
 
-## CHARACTER INTERCONNECTION MAP
+### VERA OSTROWSKI — Permanent Guest, Died 1974
 
-```
-ELSPETH ──── protects ────► LILY ──── witnessed ────► DORA
-    │                                                     │
-    │ estranged from                              researched │
-    ▼                                                     ▼
-ANNELIESE              FEARNE ◄──────── is implicated by ──┘
-    │                     │
-    │ secret about     concealing
-    │ resonance          killer
-    ▼                     │
-[weakening]           BREDA ◄── invited Dora, made deal
-                          │
-                     used data from
-                          ▼
-                        TOMÁS ──── heard ────► [grandmother's name]
-                                                    │
-                                              CORMAC watches
-                                              (waiting to see)
-```
+**Age at death:** 58. Has been 58 for 51 years.
+**Role:** The inn's social enforcer; comic relief with a dark edge; keeper of pre-Agnes institutional memory
+
+**Sliders:** Proactivity 5 / Likability 6 / Competence 8 at everything she considers worth being competent at.
+
+**Wound/Lie:** Vera was a woman who organized her entire life around being correct — correct table settings, correct behavior, correct grief — because her husband left her for someone younger and she responded by becoming unimpeachable. *Lie: If I maintain the correct form, nothing can touch me.*
+
+**Arc:** Flat. She will not change. She will, in one scene, help Agnes in a way that costs Vera something, and she will act as if it didn't happen, and Agnes will let her.
+
+**Speech:** Formal, structured, with a specific mid-century cadence. Long sentences with subordinate clauses. Never uses first names until she's decided to respect you, and she announces this: "I'll call you Agnes now." Metaphors from domestic management and social hierarchy. Asks no questions — she makes declarative assessments.
+
+> "The girl in Room 3 has been moving the salt cellar to the wrong side of the table for eleven years. I have mentioned this. I mention it again."
+
+> "You are frightened, Agnes. I can tell because you've straightened that fork four times. Sit down. I'll tell you what I saw the night the living woman arrived, and you will not interrupt me."
+
+**Secret:** Vera died in Room 4. She has never told Agnes this. She moved herself to a different room and has maintained, for fifty years, that she has always been in her current room. She does not know who currently occupies Room 4. She does not ask.
 
 ---
 
-## SECRETS THAT CHANGE THE STORY
+### ROOM 4 — Permanent Guest, Identity Unknown (officially)
 
-| Secret | Holder | What Changes When Revealed |
-|---|---|---|
-| Fearne knows who killed Dora | Fearne | The murder becomes solvable — and implicates Breda's deal |
-| Elspeth's heart | Elspeth | The investigation has a deadline the reader didn't know about |
-| Dora is still in the house | Elspeth (suppressed) | The 72-hour window mythology is reframed — she extended it by accident |
-| Breda invited Dora | Breda | Breda's deal is the motive; the victim was Breda's tool |
-| The Act was a maneuver | Dora | The entire legal framework protecting the spirits is built on a lie |
-| Resonance is weakening | Anneliese | The third act is not just about one murder but about whether any of this survives |
-| Tomás's partial report | Tomás | The clock on twelve spirits starts ticking regardless of what he does now |
+**Age at death:** Unknown. Appears to be in his 50s.
+**Role:** The still center of the book's mystery; the answer to two questions Agnes hasn't fully asked
+
+**Sliders:** Proactivity 2 / Likability 5 (unsettling, but not threatening — there's a distinction) / Competence: unknowable
+
+**Wound/Lie:** He is the secret, not the keeper of one. His function is to be the thing Agnes has been not-looking-at. His wound is Agnes's wound. His lie is her lie.
+
+**Speech:** Almost none. When he speaks, it's one sentence, precisely placed, with no preamble and no follow-up. He does not ask for anything. He does not complain. He has never signed the guestbook a second time.
+
+> "She was looking for her brother."
+
+> "You already know what I'm going to say."
+
+> *(long silence)* "The basement isn't locked."
+
+**Physical:** Average height, average build, face that is somehow hard to hold in memory even when you're looking at it. Wears clothes from no identifiable decade. Never carries anything. The room he occupies smells of ozone even when Agnes hasn't used her ability.
+
+**Secret:** He is the man Agnes stole from — the one in Portland, the one who had stolen from her mother first. He did not die naturally. The money Agnes used to buy the inn is the reason he is in Room 4. He has known this since the day he arrived. He has been waiting, not for revenge, but for Agnes to be ready to know it too. He is, in his way, the most patient character in the book.
+
+---
+
+### BERTRAND LUCE — The Cannery Ghost
+
+**Age at death:** 71. Has been 71 for 46 years.
+**Role:** Minor character with major plot function; the person who knows what happened in the Cove in 1923
+
+**Sliders:** Proactivity 1 / Likability 7 / Competence 9 (at remaining where he is)
+
+**Speech:** Slow, deliberate, with long pauses. Speaks in incomplete sentences, not from confusion but from a preference for leaving things open. Azorean-inflected cadence, three generations removed. Uses the sea as his entire metaphor domain.
+
+> "The survey man. Yes. He came back every summer. *(pause)* Some things you see once and can't stop seeing."
+
+> "I don't sell the building. That's not — there are things in the floor. Not bad things. Just things that need a roof."
+
+**Secret:** Bertrand knows what's under the cannery floor. It's not bodies. It's the physical record of the original Croft arrangement — the actual terms, written on something that isn't paper. He is protecting it not from the Crofts but for them, because the arrangement, properly understood, is the only thing keeping the Quiet Town dead below the fog line. If Gareth Croft ever gets what he's looking for, he will break the very thing he's trying to maintain.
 
 ---
 
