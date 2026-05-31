@@ -40,3 +40,13 @@ Timestamp,Script,Model,Prompt Tokens,Completion Tokens,Total Tokens,Cost (USD)
 2026-05-31T15:30:12.131287,evaluate.py,anthropic/claude-opus-4.6,19685,559,20244,$0.112400
 2026-05-31T15:32:43.711807,gen_revision.py,anthropic/claude-sonnet-4.6,16548,2273,18821,$0.083739
 2026-05-31T15:35:07.223942,gen_revision.py,anthropic/claude-sonnet-4.6,16797,2184,18981,$0.083151
+2026-05-31T15:35:37.365813,build_arc_summary.py,anthropic/claude-sonnet-4.6,3188,145,3333,$0.011739
+2026-05-31T15:35:52.451115,build_arc_summary.py,anthropic/claude-sonnet-4.6,3640,166,3806,$0.013410
+2026-05-31T15:36:07.124617,build_arc_summary.py,anthropic/claude-sonnet-4.6,3503,178,3681,$0.013179
+2026-05-31T15:36:28.897407,build_arc_summary.py,anthropic/claude-sonnet-4.6,3526,116,3642,$0.000000
+2026-05-31T15:36:40.683410,build_arc_summary.py,anthropic/claude-sonnet-4.6,2768,129,2897,$0.010239
+2026-05-31T15:37:05.015735,build_arc_summary.py,anthropic/claude-sonnet-4.6,2255,118,2373,$0.000000
+2026-05-31T15:37:27.106219,build_arc_summary.py,anthropic/claude-sonnet-4.6,2673,142,2815,$0.010149
+2026-05-31T15:37:39.915147,build_arc_summary.py,anthropic/claude-sonnet-4.6,3118,164,3282,$0.011814
+2026-05-31T15:37:53.027547,build_arc_summary.py,anthropic/claude-sonnet-4.6,3421,179,3600,$0.012948
+2026-05-31T15:38:04.823513,build_arc_summary.py,anthropic/claude-sonnet-4.6,3210,130,3340,$0.011580
