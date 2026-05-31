@@ -5,3 +5,4 @@ discarded	foundation	0.0	0	discard	Iteration 3: no improvement (0.0 <= 5.0)
 discarded	foundation	4.0	0	discard	Iteration 4: no improvement (4.0 <= 5.0)
 c7b2e3e	foundation	8.0	0	keep	Iteration 1: score improved 0.0 -> 8.0
 bce5564	ch01	7.0	2425	keep	Chapter 1 (attempt 1)
+bd1c46b	ch02	7.0	2676	keep	Chapter 2 (attempt 1)
