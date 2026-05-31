@@ -3,18 +3,9 @@
 
 ---
 
-<!-- Define the central secret of your novel here during the foundation
-phase. This is the thing the reader discovers at the climax — the
-recontextualization that makes everything before it mean something
-different.
-
-Good mysteries have:
-  - A question that can be asked in one sentence
-  - An answer that recontextualizes the entire story
-  - No right answer (moral ambiguity)
-  - A physical manifestation in the world (not just information)
-  - A choice the protagonist must make that has real cost
-
-This file should NOT be loaded into the writing agent's context during
-the drafting phase. The mystery should emerge from the world and
-characters, not be stated explicitly in the prose until the reveal. -->
+Good Cozy Supernatural Horror stories have:
+  - High stakes for the protagonist (a murder to solve, a business to save) but low global stakes (the world is not ending).
+  - A quirky, supernatural supporting cast that causes headaches but is ultimately lovable or understandable.
+  - Spooky, atmospheric tension (creaking floorboards, chilly mists, flickering lights) without ever crossing into graphic gore or extreme trauma.
+  - An emphasis on community, tea, baked goods, or small-town drama juxtaposed with the macabre.
+  - A puzzle-box mystery at the core, solvable by an amateur sleuth.

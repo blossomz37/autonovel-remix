@@ -1,4 +1,4 @@
-# THE CENTRAL MYSTERY
+# GENRE CONVENTIONS & THEMATIC ANCHORS
 ### Author's Eyes Only — Not for AI agent context during drafting
 
 ---
