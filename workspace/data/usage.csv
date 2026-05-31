@@ -25,3 +25,5 @@ Timestamp,Script,Model,Prompt Tokens,Completion Tokens,Total Tokens,Cost (USD)
 2026-05-31T14:51:39.746059,evaluate.py,anthropic/claude-opus-4.6,22202,1370,23572,$0.145260
 2026-05-31T14:53:14.636305,draft_chapter.py,anthropic/claude-sonnet-4.6,14604,3047,17651,$0.089517
 2026-05-31T14:54:10.657315,evaluate.py,anthropic/claude-opus-4.6,22621,1496,24117,$0.150505
+2026-05-31T14:55:44.554283,draft_chapter.py,anthropic/claude-sonnet-4.6,14595,3350,17945,$0.094035
+2026-05-31T14:56:27.509543,evaluate.py,anthropic/claude-opus-4.6,22976,1442,24418,$0.150930
