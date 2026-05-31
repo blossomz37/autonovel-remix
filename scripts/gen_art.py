@@ -35,12 +35,13 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env", override=True)
+PROJECT_DIR = BASE_DIR / "workspace"
 
 FAL_KEY = os.environ.get("FAL_KEY", "")
 FAL_URL = "https://fal.run/fal-ai/nano-banana-2"
 FAL_EDIT_URL = "https://fal.run/fal-ai/nano-banana-2/edit"
 
-ART_DIR = BASE_DIR / "art"
+ART_DIR = PROJECT_DIR / "art"
 VARIANTS_DIR = ART_DIR / "variants"
 SVG_DIR = ART_DIR / "svg"
 STYLE_FILE = ART_DIR / "visual_style.json"
@@ -164,10 +165,10 @@ def get_reference_url(art_type):
 # ============================================================
 
 def cmd_style(args):
-    world = (BASE_DIR / "lore" / "world.md").read_text()[:5000]
-    voice = (BASE_DIR / "lore" / "voice.md").read_text()[:3000]
+    world = (PROJECT_DIR / "lore" / "world.md").read_text()[:5000]
+    voice = (PROJECT_DIR / "lore" / "voice.md").read_text()[:3000]
     title = "Unknown"
-    outline = BASE_DIR / "lore" / "outline.md"
+    outline = PROJECT_DIR / "lore" / "outline.md"
     if outline.exists():
         title = outline.read_text().split("\n")[0].lstrip("# ").strip()
 
@@ -209,8 +210,8 @@ def cmd_curate(args):
     from gen_art_directions import generate_directions
 
     world = ""
-    if (BASE_DIR / "lore" / "world.md").exists():
-        world = (BASE_DIR / "lore" / "world.md").read_text()[:3000]
+    if (PROJECT_DIR / "lore" / "world.md").exists():
+        world = (PROJECT_DIR / "lore" / "world.md").read_text()[:3000]
 
     print(f"Generating {n} radically different {art_type} directions...")
     directions = generate_directions(art_type, style, n, world)

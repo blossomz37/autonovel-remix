@@ -16,12 +16,13 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env")
+PROJECT_DIR = BASE_DIR / "workspace"
 
 JUDGE_MODEL = os.environ.get("AUTONOVEL_JUDGE_MODEL", "claude-opus-4-6")
 API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 API_BASE = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/api/v1")
-CHAPTERS_DIR = BASE_DIR / "chapters"
-EDIT_LOG_DIR = BASE_DIR / "edit_logs"
+CHAPTERS_DIR = PROJECT_DIR / "chapters"
+EDIT_LOG_DIR = PROJECT_DIR / "edit_logs"
 EDIT_LOG_DIR.mkdir(exist_ok=True)
 
 with open(BASE_DIR / "config" / "adversarial_edit.toml", "rb") as f:

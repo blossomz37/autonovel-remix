@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env", override=True)
+PROJECT_DIR = BASE_DIR / "workspace"
 
 WRITER_MODEL = os.environ.get("AUTONOVEL_WRITER_MODEL", "claude-sonnet-4-6")
 ANTHROPIC_KEY = os.environ.get("OPENROUTER_API_KEY", "")
@@ -89,7 +90,7 @@ def generate_directions(art_type, style, n=6, world_excerpt=""):
 
 if __name__ == "__main__":
     import sys
-    style_file = BASE_DIR / "art" / "visual_style.json"
+    style_file = PROJECT_DIR / "art" / "visual_style.json"
     if not style_file.exists():
         print("Run gen_art.py style first")
         sys.exit(1)
@@ -99,8 +100,8 @@ if __name__ == "__main__":
     n = int(sys.argv[2]) if len(sys.argv) > 2 else 6
     
     world = ""
-    if (BASE_DIR / "lore" / "world.md").exists():
-        world = (BASE_DIR / "lore" / "world.md").read_text()[:3000]
+    if (PROJECT_DIR / "lore" / "world.md").exists():
+        world = (PROJECT_DIR / "lore" / "world.md").read_text()[:3000]
     
     directions = generate_directions(art_type, style, n, world)
     for i, d in enumerate(directions, 1):

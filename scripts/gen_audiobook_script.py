@@ -21,13 +21,14 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env", override=True)
+PROJECT_DIR = BASE_DIR / "workspace"
 
 WRITER_MODEL = os.environ.get("AUTONOVEL_WRITER_MODEL", "claude-sonnet-4-6")
 API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 API_BASE = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/api/v1")
 
-CHAPTERS_DIR = BASE_DIR / "chapters"
-AUDIO_DIR = BASE_DIR / "audiobook"
+CHAPTERS_DIR = PROJECT_DIR / "chapters"
+AUDIO_DIR = PROJECT_DIR / "audiobook"
 SCRIPTS_DIR = AUDIO_DIR / "scripts"
 
 # Characters from the novel

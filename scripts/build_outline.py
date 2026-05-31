@@ -14,11 +14,12 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env")
+PROJECT_DIR = BASE_DIR / "workspace"
 
 JUDGE_MODEL = os.environ.get("AUTONOVEL_JUDGE_MODEL", "claude-sonnet-4-6")
 API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 API_BASE = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/api/v1")
-CHAPTERS_DIR = BASE_DIR / "chapters"
+CHAPTERS_DIR = PROJECT_DIR / "chapters"
 
 with open(BASE_DIR / "config" / "build_outline.toml", "rb") as f:
     CONFIG = tomllib.load(f)
@@ -48,7 +49,7 @@ def call_model(prompt, max_tokens=None, temperature=None):
 
 def main():
     # Load supporting docs for context
-    characters = (BASE_DIR / "lore" / "characters.md").read_text()[:3000]
+    characters = (PROJECT_DIR / "lore" / "characters.md").read_text()[:3000]
     
     entries = []
     
@@ -68,7 +69,7 @@ def main():
         print(f"  {ch:2d}. {title_line} ({wc}w)")
     
     # Load existing outline header info
-    old_outline = (BASE_DIR / "lore" / "outline.md").read_text()
+    old_outline = (PROJECT_DIR / "lore" / "outline.md").read_text()
     
     # Build new outline
     lines = []
@@ -142,7 +143,7 @@ def main():
     lines.append("*Outline rebuilt from actual chapters, Cycle 5.*")
     
     out = '\n'.join(lines)
-    (BASE_DIR / "lore" / "outline.md").write_text(out)
+    (PROJECT_DIR / "lore" / "outline.md").write_text(out)
     print(f"\nSaved outline.md ({len(out.split())} words)")
 
 if __name__ == "__main__":

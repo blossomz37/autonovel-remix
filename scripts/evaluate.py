@@ -29,6 +29,7 @@ BASE_DIR = Path(__file__).parent.parent
 # Load .env file if present
 from dotenv import load_dotenv
 load_dotenv(BASE_DIR / ".env")
+PROJECT_DIR = BASE_DIR / "workspace"
 
 # Judge uses Opus 4.6 (harsh, critical). Writer uses Sonnet 4.6 (fast, long context).
 # Intentionally different to avoid self-congratulation.
@@ -38,8 +39,8 @@ API_BASE_URL = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/a
 
 # Beta header to unlock 1M context window on both Opus 4.6 and Sonnet 4.6
 ANTHROPIC_BETA = "context-1m-2025-08-07"
-CHAPTERS_DIR = BASE_DIR / "chapters"
-EVAL_LOG_DIR = BASE_DIR / "eval_logs"
+CHAPTERS_DIR = PROJECT_DIR / "chapters"
+EVAL_LOG_DIR = PROJECT_DIR / "eval_logs"
 EVAL_LOG_DIR.mkdir(exist_ok=True)
 
 with open(BASE_DIR / "config" / "evaluate.toml", "rb") as f:
@@ -254,11 +255,11 @@ def load_file(path):
 def load_layer_files():
     """Load all planning layer files."""
     return {
-        "voice": load_file(BASE_DIR / "lore" / "voice.md"),
-        "world": load_file(BASE_DIR / "lore" / "world.md"),
-        "characters": load_file(BASE_DIR / "lore" / "characters.md"),
-        "outline": load_file(BASE_DIR / "lore" / "outline.md"),
-        "canon": load_file(BASE_DIR / "lore" / "canon.md"),
+        "voice": load_file(PROJECT_DIR / "lore" / "voice.md"),
+        "world": load_file(PROJECT_DIR / "lore" / "world.md"),
+        "characters": load_file(PROJECT_DIR / "lore" / "characters.md"),
+        "outline": load_file(PROJECT_DIR / "lore" / "outline.md"),
+        "canon": load_file(PROJECT_DIR / "lore" / "canon.md"),
     }
 
 
@@ -277,22 +278,22 @@ def load_all_chapters():
 
 
 def call_judge(prompt, max_tokens=None, temperature=None):
-    if max_tokens is None: max_tokens = CONFIG["model"]["max_tokens"]
-    if temperature is None: temperature = CONFIG["model"]["temperature"]
-    """Call the Anthropic judge LLM and return its response text."""
-    import openai
-    client = openai.OpenAI(api_key=ANTHROPIC_API_KEY, base_url=API_BASE_URL)
-    msg = client.chat.completions.create(
-        model=JUDGE_MODEL,
-        max_tokens=max_tokens,
-        temperature=temperature,
+    if max_tokens is None: max_tokens = CONFIG.get("model", {}).get("max_tokens", 4000)
+    if temperature is None: temperature = CONFIG.get("model", {}).get("temperature", 0.2)
+    from api_client import call_llm
+    from pathlib import Path
+    return call_llm(
         messages=[
             {"role": "system", "content": CONFIG["prompts"]["system"].strip()},
             {"role": "user", "content": prompt}
         ],
-        timeout=300,
+        model=JUDGE_MODEL,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        stream=False,
+        require_json=True,
+        script_name=Path(__file__).name
     )
-    return msg.choices[0].message.content
 
 
 def parse_json_response(text):

@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env")
+PROJECT_DIR = BASE_DIR / "workspace"
 
 JUDGE_MODEL = os.environ.get("AUTONOVEL_JUDGE_MODEL", "claude-opus-4-6")
 API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
@@ -101,7 +102,7 @@ def find_disagreements(results):
     return disagreements
 
 def main():
-    arc_summary = (BASE_DIR / "arc_summary.md").read_text()
+    arc_summary = (PROJECT_DIR / "arc_summary.md").read_text()
     
     results = {}
     for reader_key, reader_info in READERS.items():
@@ -152,7 +153,7 @@ def main():
         "disagreements": disagreements,
         "timestamp": datetime.now().isoformat()
     }
-    out_path = BASE_DIR / "edit_logs" / "reader_panel.json"
+    out_path = PROJECT_DIR / "edit_logs" / "reader_panel.json"
     with open(out_path, "w") as f:
         json.dump(output, f, indent=2)
     print(f"\nSaved to {out_path}")

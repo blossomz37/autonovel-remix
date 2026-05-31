@@ -19,11 +19,12 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env")
+PROJECT_DIR = BASE_DIR / "workspace"
 
 JUDGE_MODEL = os.environ.get("AUTONOVEL_JUDGE_MODEL", "claude-opus-4-6")
 API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 API_BASE = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/api/v1")
-CHAPTERS_DIR = BASE_DIR / "chapters"
+CHAPTERS_DIR = PROJECT_DIR / "chapters"
 
 with open(BASE_DIR / "config" / "compare_chapters.toml", "rb") as f:
     CONFIG = tomllib.load(f)
@@ -176,7 +177,7 @@ def main():
             "matchups": matchups,
             "timestamp": datetime.now().isoformat()
         }
-        out_path = BASE_DIR / "edit_logs" / "tournament_results.json"
+        out_path = PROJECT_DIR / "edit_logs" / "tournament_results.json"
         with open(out_path, "w") as f:
             json.dump(results, f, indent=2)
         print(f"\nSaved to {out_path}")

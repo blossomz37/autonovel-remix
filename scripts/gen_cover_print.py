@@ -18,7 +18,8 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 BASE_DIR = Path(__file__).parent.parent
-ART_DIR = BASE_DIR / "art"
+PROJECT_DIR = BASE_DIR / "workspace"
+ART_DIR = PROJECT_DIR / "art"
 
 # Standard trade paperback dimensions
 TRIM_W = 5.5   # inches
@@ -269,7 +270,7 @@ def compose_cover(
             blurb_y += line_height
 
     # === NOUS LOGO on back cover (bottom left, white background) ===
-    nous_svg = BASE_DIR / "art" / "NOUS-F-badge.svg"
+    nous_svg = PROJECT_DIR / "art" / "NOUS-F-badge.svg"
     if nous_svg.exists():
         try:
             import cairosvg

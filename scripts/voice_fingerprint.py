@@ -12,7 +12,8 @@ from pathlib import Path
 from collections import Counter
 
 BASE_DIR = Path(__file__).parent.parent
-CHAPTERS_DIR = BASE_DIR / "chapters"
+PROJECT_DIR = BASE_DIR / "workspace"
+CHAPTERS_DIR = PROJECT_DIR / "chapters"
 
 # The three vocabulary wells from voice.md
 WELL_MUSICAL = {
@@ -192,7 +193,7 @@ def main():
             print(f"    {o}")
     
     # Save full results
-    out_path = BASE_DIR / "edit_logs" / "voice_fingerprint.json"
+    out_path = PROJECT_DIR / "edit_logs" / "voice_fingerprint.json"
     with open(out_path, "w") as f:
         json.dump({"chapters": results, "outliers": outliers}, f, indent=2)
     print(f"\nSaved to {out_path}")

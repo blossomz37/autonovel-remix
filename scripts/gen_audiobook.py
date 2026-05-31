@@ -21,13 +21,14 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env", override=True)
+PROJECT_DIR = BASE_DIR / "workspace"
 
 ELEVENLABS_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
 
-AUDIO_DIR = BASE_DIR / "audiobook"
+AUDIO_DIR = PROJECT_DIR / "audiobook"
 SCRIPTS_DIR = AUDIO_DIR / "scripts"
 OUTPUT_DIR = AUDIO_DIR / "chapters"
-VOICES_FILE = BASE_DIR / "lore" / "audiobook_voices.json"
+VOICES_FILE = PROJECT_DIR / "lore" / "audiobook_voices.json"
 
 MAX_CHARS_PER_CALL = 4500  # stay under 5000 limit with overhead
 PAUSE_BETWEEN_CALLS = 3.0  # rate limiting — ElevenLabs has per-minute caps

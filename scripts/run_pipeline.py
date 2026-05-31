@@ -30,12 +30,13 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 BASE_DIR = Path(__file__).parent.parent
-STATE_FILE = BASE_DIR / "state.json"
-RESULTS_FILE = BASE_DIR / "results.tsv"
-CHAPTERS_DIR = BASE_DIR / "chapters"
-BRIEFS_DIR = BASE_DIR / "briefs"
-EDIT_LOGS_DIR = BASE_DIR / "edit_logs"
-EVAL_LOGS_DIR = BASE_DIR / "eval_logs"
+PROJECT_DIR = BASE_DIR / "workspace"
+STATE_FILE = PROJECT_DIR / "state.json"
+RESULTS_FILE = PROJECT_DIR / "results.tsv"
+CHAPTERS_DIR = PROJECT_DIR / "chapters"
+BRIEFS_DIR = PROJECT_DIR / "briefs"
+EDIT_LOGS_DIR = PROJECT_DIR / "edit_logs"
+EVAL_LOGS_DIR = PROJECT_DIR / "eval_logs"
 
 FOUNDATION_THRESHOLD = 7.5
 CHAPTER_THRESHOLD = 6.0
@@ -224,7 +225,7 @@ def get_total_chapters(state: dict) -> int:
     if state.get("chapters_total", 0) > 0:
         return state["chapters_total"]
     # Try to infer from outline.md
-    outline = BASE_DIR / "lore" / "outline.md"
+    outline = PROJECT_DIR / "lore" / "outline.md"
     if outline.exists():
         text = outline.read_text()
         matches = re.findall(r'###\s*Ch(?:apter)?\s*(\d+)', text)
@@ -253,19 +254,24 @@ def run_foundation(state: dict) -> dict:
 
         # 1. Generate planning documents
         step("Generating world bible...")
-        uv_run("gen_world.py", timeout=300)
+        res = uv_run("gen_world.py", timeout=300)
+        (PROJECT_DIR / "lore" / "world.md").write_text(res.stdout)
 
         step("Generating characters...")
-        uv_run("gen_characters.py", timeout=300)
+        res = uv_run("gen_characters.py", timeout=300)
+        (PROJECT_DIR / "lore" / "characters.md").write_text(res.stdout)
 
         step("Generating outline (part 1)...")
-        uv_run("gen_outline.py", timeout=300)
+        res = uv_run("gen_outline.py", timeout=300)
+        Path("/tmp/outline_output.md").write_text(res.stdout)
 
         step("Generating outline (part 2 — foreshadowing)...")
-        uv_run("gen_outline_part2.py", timeout=300)
+        res = uv_run("gen_outline_part2.py", timeout=300)
+        (PROJECT_DIR / "lore" / "outline.md").write_text(res.stdout)
 
         step("Generating canon...")
-        uv_run("gen_canon.py", timeout=300)
+        res = uv_run("gen_canon.py", timeout=300)
+        (PROJECT_DIR / "lore" / "canon.md").write_text(res.stdout)
 
         step("Running voice fingerprint...")
         uv_run("voice_fingerprint.py", timeout=300)
@@ -726,7 +732,7 @@ def run_export(state: dict) -> dict:
 
     # 3. Concatenate chapters into manuscript.md
     step("Building manuscript.md...")
-    manuscript = BASE_DIR / "manuscript.md"
+    manuscript = PROJECT_DIR / "manuscript.md"
     chapter_files = sorted(CHAPTERS_DIR.glob("ch_*.md"))
 
     parts = []
@@ -743,13 +749,13 @@ def run_export(state: dict) -> dict:
         step("WARNING: no chapter files found for manuscript")
 
     # 4. Build LaTeX
-    build_tex = BASE_DIR / "typeset" / "build_tex.py"
+    build_tex = PROJECT_DIR / "typeset" / "build_tex.py"
     if build_tex.exists():
         step("Building LaTeX content...")
         run_tool(f"uv run python typeset/build_tex.py", timeout=120)
 
         # 5. Typeset with tectonic (if available)
-        novel_tex = BASE_DIR / "typeset" / "novel.tex"
+        novel_tex = PROJECT_DIR / "typeset" / "novel.tex"
         if novel_tex.exists():
             tectonic_check = run_tool("which tectonic", timeout=10)
             if tectonic_check.returncode == 0:
@@ -788,7 +794,7 @@ def run_pipeline(args):
     # Load or initialize state
     if args.from_scratch:
         banner("STARTING FROM SCRATCH")
-        seed_file = BASE_DIR / "lore" / "seed.txt"
+        seed_file = PROJECT_DIR / "lore" / "seed.txt"
         if not seed_file.exists():
             print("ERROR: seed.txt not found. Cannot start from scratch without a seed.")
             sys.exit(1)

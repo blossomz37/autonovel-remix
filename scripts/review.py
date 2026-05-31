@@ -23,14 +23,15 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env", override=True)
+PROJECT_DIR = BASE_DIR / "workspace"
 
 # Use Opus for reviews — it's the best at literary analysis
 REVIEW_MODEL = os.environ.get("AUTONOVEL_REVIEW_MODEL", "claude-opus-4-6")
 API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 API_BASE = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/api/v1")
 
-CHAPTERS_DIR = BASE_DIR / "chapters"
-LOGS_DIR = BASE_DIR / "edit_logs"
+CHAPTERS_DIR = PROJECT_DIR / "chapters"
+LOGS_DIR = PROJECT_DIR / "edit_logs"
 
 with open(BASE_DIR / "config" / "review.toml", "rb") as f:
     CONFIG = tomllib.load(f)
@@ -56,7 +57,7 @@ def call_opus(prompt, max_tokens=None, temperature=None):
 
 def get_title():
     """Extract novel title from first chapter or outline."""
-    outline = BASE_DIR / "lore" / "outline.md"
+    outline = PROJECT_DIR / "lore" / "outline.md"
     if outline.exists():
         first_line = outline.read_text().split("\n")[0]
         title = first_line.lstrip("# ").strip()

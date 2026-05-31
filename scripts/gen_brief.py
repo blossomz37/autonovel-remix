@@ -16,11 +16,12 @@ import sys
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent
-CHAPTERS_DIR = BASE_DIR / "chapters"
-EDIT_LOGS_DIR = BASE_DIR / "edit_logs"
-EVAL_LOGS_DIR = BASE_DIR / "eval_logs"
-BRIEFS_DIR = BASE_DIR / "briefs"
-VOICE_PATH = BASE_DIR / "lore" / "voice.md"
+PROJECT_DIR = BASE_DIR / "workspace"
+CHAPTERS_DIR = PROJECT_DIR / "chapters"
+EDIT_LOGS_DIR = PROJECT_DIR / "edit_logs"
+EVAL_LOGS_DIR = PROJECT_DIR / "eval_logs"
+BRIEFS_DIR = PROJECT_DIR / "briefs"
+VOICE_PATH = PROJECT_DIR / "lore" / "voice.md"
 
 
 # ---------------------------------------------------------------------------
