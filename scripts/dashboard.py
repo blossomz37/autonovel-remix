@@ -51,7 +51,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return result
         
         # Custom order for top-level workspace dirs
-        dir_order = ['lore', 'ideas', 'chapters', 'briefs', 'edit_logs', 'data']
+        dir_order = ['chapters', 'lore', 'ideas', 'briefs', 'edit_logs', 'data']
         
         items = sorted(dir_path.iterdir())
         if rel_prefix == "workspace":
