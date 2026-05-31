@@ -50,7 +50,19 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not dir_path.exists():
             return result
         
-        for item in sorted(dir_path.iterdir()):
+        # Custom order for top-level workspace dirs
+        dir_order = ['lore', 'ideas', 'chapters', 'briefs', 'edit_logs', 'data']
+        
+        items = sorted(dir_path.iterdir())
+        if rel_prefix == "workspace":
+            def sort_key(item):
+                try:
+                    return (0, dir_order.index(item.name))
+                except ValueError:
+                    return (1, item.name)
+            items = sorted(items, key=sort_key)
+
+        for item in items:
             rel = f"/{rel_prefix}/{item.name}"
             if item.is_dir():
                 if item.name in TREE_EXCLUDE:

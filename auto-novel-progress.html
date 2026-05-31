@@ -30,8 +30,8 @@
 
       /* Text */
       --text-main: #e6edf3;
-      --text-muted: #7d8590;
-      --text-dim: #484f58;
+      --text-muted: #9da5b0;
+      --text-dim: #6b7280;
 
       /* Accents mapped from rainbow */
       --accent: var(--c-violet);
@@ -676,7 +676,7 @@
       if (node.type === 'dir') {
         const color = folderColors[folderIdx++ % folderColors.length];
         const folder = document.createElement('div');
-        folder.className = 'tree-folder open';
+        folder.className = 'tree-folder';
         const label = document.createElement('div');
         label.className = 'tree-label';
         label.innerHTML = `<span class="icon" style="color:${color}">▶</span><span class="folder-name">${node.name}</span>`;
@@ -693,6 +693,7 @@
       } else {
         const file = document.createElement('div');
         file.className = 'tree-file' + (node.path === activeTabPath ? ' active' : '');
+        file.dataset.path = node.path;
         const sizeStr = node.size > 1024 ? (node.size / 1024).toFixed(1) + 'k' : node.size + 'b';
         file.innerHTML = `<span class="file-icon">📄</span>${node.name}<span class="file-size">${sizeStr}</span>`;
         file.onclick = () => openFile(node.name, node.path);
@@ -701,11 +702,17 @@
     }
 
     // ─── Tabs & Preview ─────────────────────
+    function updateActiveHighlight() {
+      document.querySelectorAll('.tree-file').forEach(el => {
+        el.classList.toggle('active', el.dataset.path === activeTabPath);
+      });
+    }
+
     function openFile(name, path) {
       if (!openTabs.find(t => t.path === path)) openTabs.push({ name, path });
       activeTabPath = path;
       renderTabs();
-      renderTree();
+      updateActiveHighlight();
       fetchActiveFile();
     }
 
@@ -713,7 +720,7 @@
       openTabs = openTabs.filter(t => t.path !== path);
       if (activeTabPath === path) activeTabPath = openTabs.length ? openTabs[openTabs.length - 1].path : null;
       renderTabs();
-      renderTree();
+      updateActiveHighlight();
       if (activeTabPath) fetchActiveFile();
       else document.getElementById('preview-pane').innerHTML = `<div class="preview-empty"><div class="icon">📄</div><p>Select a file from the sidebar to preview</p></div>`;
     }
