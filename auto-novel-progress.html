@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>autonovel-remix Progress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #818cf8;
+      --accent-glow: rgba(129, 140, 248, 0.4);
+      --success: #34d399;
+      --warning: #fbbf24;
+      --danger: #f87171;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Background animated blobs for modern feel */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+      opacity: 0.5;
+      animation: float 10s ease-in-out infinite alternate;
+    }
+    .blob-1 { top: -10%; left: -10%; width: 40vw; height: 40vw; background: rgba(99, 102, 241, 0.3); }
+    .blob-2 { bottom: -10%; right: -10%; width: 50vw; height: 50vw; background: rgba(168, 85, 247, 0.2); animation-delay: -5s; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, 50px) scale(1.1); }
+    }
+
+    header {
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #fff, #a5b4fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .pulse {
+      width: 10px;
+      height: 10px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--success);
+      animation: blink 1.5s infinite ease-in-out;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; box-shadow: 0 0 15px var(--success); }
+    }
+
+    .dashboard {
+      width: 100%;
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .glass-panel:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .panel-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .value-large {
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+
+    .value-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .score-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .score-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .score-val {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      margin-top: 1rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #c084fc);
+      border-radius: 4px;
+      width: 0%;
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .history-panel {
+      grid-column: 1 / -1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    th {
+      text-align: left;
+      padding-bottom: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    td {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .badge-keep { background: rgba(52, 211, 153, 0.15); color: var(--success); }
+    .badge-discard { background: rgba(248, 113, 113, 0.15); color: var(--danger); }
+    
+    .debts-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    .debts-list li {
+      font-size: 0.9rem;
+      padding: 0.4rem 0;
+      color: var(--warning);
+      border-bottom: 1px dashed rgba(255,255,255,0.1);
+    }
+    .debts-list li::before {
+      content: '⚠️';
+      margin-right: 0.5rem;
+    }
+
+    /* Container for layout animations */
+    .fade-enter {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeUp 0.4s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <header>
+    <h1>autonovel-remix</h1>
+    <div class="status-indicator">
+      <div class="pulse" id="pulse-dot"></div>
+      <span id="pipeline-status">Polling...</span>
+    </div>
+  </header>
+
+  <div class="dashboard">
+    <!-- Current Status -->
+    <div class="glass-panel">
+      <div class="panel-title">Current Phase</div>
+      <div class="value-large" id="val-phase" style="text-transform: capitalize;">Loading</div>
+      <div class="value-sub">Focus: <span id="val-focus">...</span></div>
+      <div class="value-sub">Iteration/Cycle: <span id="val-iteration">0</span></div>
+    </div>
+
+    <!-- Scores -->
+    <div class="glass-panel">
+      <div class="panel-title">Evaluation Scores</div>
+      <div class="score-grid">
+        <div class="score-item">
+          <div class="panel-title" style="margin-bottom: 0.2rem; font-size:0.7rem;">Foundation</div>
+          <div class="score-val" id="val-found-score">0.0</div>
+        </div>
+        <div class="score-item">
+          <div class="panel-title" style="margin-bottom: 0.2rem; font-size:0.7rem;">Lore Consistency</div>
+          <div class="score-val" id="val-lore-score">0.0</div>
+        </div>
+        <div class="score-item">
+          <div class="panel-title" style="margin-bottom: 0.2rem; font-size:0.7rem;">Novel Avg</div>
+          <div class="score-val" id="val-novel-score">0.0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter Progress -->
+    <div class="glass-panel">
+      <div class="panel-title">Drafting Progress</div>
+      <div class="value-large"><span id="val-drafted">0</span><span style="color: var(--text-muted); font-size: 1.5rem;"> / <span id="val-total">0</span></span></div>
+      <div class="value-sub">Chapters Complete</div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Debts (conditional) -->
+    <div class="glass-panel" id="debts-panel" style="display: none;">
+      <div class="panel-title">Propagation Debts</div>
+      <ul class="debts-list" id="debts-list"></ul>
+    </div>
+
+    <!-- History -->
+    <div class="glass-panel history-panel">
+      <div class="panel-title">Recent Iterations (results.tsv)</div>
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Phase</th>
+              <th>Score</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody id="history-body">
+            <tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Awaiting data...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    async function fetchState() {
+      try {
+        const res = await fetch('/workspace/state.json');
+        if (!res.ok) throw new Error('Network response was not ok');
+        const state = await res.json();
+        
+        document.getElementById('val-phase').textContent = state.phase || 'Idle';
+        document.getElementById('val-focus').textContent = state.current_focus || 'None';
+        document.getElementById('val-iteration').textContent = Math.max(state.iteration, state.revision_cycle) || '0';
+        
+        document.getElementById('val-found-score').textContent = (state.foundation_score || 0).toFixed(1);
+        document.getElementById('val-lore-score').textContent = (state.lore_score || 0).toFixed(1);
+        document.getElementById('val-novel-score').textContent = (state.novel_score || 0).toFixed(1);
+        
+        document.getElementById('val-drafted').textContent = state.chapters_drafted || '0';
+        document.getElementById('val-total').textContent = state.chapters_total || '0';
+        
+        const pct = state.chapters_total > 0 ? ((state.chapters_drafted / state.chapters_total) * 100) : 0;
+        document.getElementById('progress-bar').style.width = `${Math.min(pct, 100)}%`;
+
+        // Debts
+        const debtsPanel = document.getElementById('debts-panel');
+        const debtsList = document.getElementById('debts-list');
+        if (state.debts && state.debts.length > 0) {
+          debtsPanel.style.display = 'block';
+          debtsList.innerHTML = '';
+          state.debts.forEach(debt => {
+            const li = document.createElement('li');
+            li.textContent = debt;
+            debtsList.appendChild(li);
+          });
+        } else {
+          debtsPanel.style.display = 'none';
+        }
+
+        document.getElementById('pipeline-status').textContent = state.phase ? 'Running' : 'Idle';
+        document.getElementById('pulse-dot').style.background = state.phase ? 'var(--success)' : 'var(--text-muted)';
+        document.getElementById('pulse-dot').style.boxShadow = state.phase ? '0 0 10px var(--success)' : 'none';
+        document.getElementById('pulse-dot').style.animation = state.phase ? 'blink 1.5s infinite ease-in-out' : 'none';
+
+      } catch (err) {
+        console.log('Error fetching state.json:', err);
+        document.getElementById('pipeline-status').textContent = 'Disconnected';
+        document.getElementById('pulse-dot').style.background = 'var(--danger)';
+      }
+    }
+
+    async function fetchResults() {
+      try {
+        // Add cache busting
+        const res = await fetch('/workspace/results.tsv?t=' + new Date().getTime());
+        if (!res.ok) throw new Error('results.tsv not found');
+        const text = await res.text();
+        
+        const lines = text.trim().split('\n');
+        if (lines.length <= 1) return; // Only header
+
+        const headers = lines[0].split('\t');
+        const rows = lines.slice(1).reverse().slice(0, 10); // Show last 10, newest first
+
+        const tbody = document.getElementById('history-body');
+        tbody.innerHTML = '';
+
+        rows.forEach(row => {
+          const cols = row.split('\t');
+          // commit phase score word_count status description
+          // cols[0]=commit, cols[1]=phase, cols[2]=score, cols[3]=words, cols[4]=status, cols[5]=desc
+          const status = cols[4] || '';
+          const badgeClass = status.includes('keep') ? 'badge-keep' : (status.includes('discard') ? 'badge-discard' : '');
+          
+          const tr = document.createElement('tr');
+          tr.className = 'fade-enter';
+          tr.innerHTML = `
+            <td><span class="badge ${badgeClass}">${status}</span></td>
+            <td style="text-transform: capitalize;">${cols[1] || ''}</td>
+            <td>${cols[2] || '0.0'}</td>
+            <td>${cols[5] || ''}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+      } catch (err) {
+        console.log('Error fetching results.tsv:', err);
+      }
+    }
+
+    // Polling loop
+    setInterval(() => {
+      fetchState();
+      fetchResults();
+    }, 2000);
+
+    // Initial load
+    fetchState();
+    fetchResults();
+  </script>
+</body>
+</html>
