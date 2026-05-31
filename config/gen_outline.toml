@@ -42,7 +42,7 @@ State the percentage marks for the key novel.
 
 For EACH chapter, provide:
 ### Ch N: [Title]
-- **POV:** (always Cass, third-person limited)
+- **POV:** The specified point-of-view character for this chapter
 - **Location:** Which districts/locations
 - **Save the Cat beat:** Which beat this chapter serves (Opening Image, Setup, Catalyst, etc.)
 - **% mark:** Where this falls in the novel
@@ -51,9 +51,8 @@ For EACH chapter, provide:
 - **Beats:** 3-5 specific scene beats that must happen
 - **Plants:** Foreshadowing elements planted in this chapter
 - **Payoffs:** Foreshadowing elements that pay off here
-- **Character movement:** What changes for Cass (or other characters) by chapter's end
-- **The lie:** How Cass's lie ("if I master the system, I can fix things from inside") is
-  reinforced or challenged in this chapter
+- **Character movement:** What changes for the POV character (or other characters) by chapter's end
+- **The lie:** How the protagonist's core flaw or "lie" is reinforced or challenged in this chapter
 - **~Word count target:** for pacing
 
 ## Foreshadowing Ledger
@@ -65,27 +64,24 @@ Include at LEAST 15 threads. Types: object, dialogue, action, symbolic, structur
 
 KEY PLOT ARCHITECTURE:
 
-Act I (Ch 1-6ish): Establish Cass's world, his pain, his gift, the Academy, his family.
-Plant the mystery early (the locked room, the forbidden bells, father's tremor).
-Catalyst: something forces Cass to investigate Perin's contract.
+Act I (0-23%): Establish the protagonist's world, their wound, their lie, and their status quo.
+Plant the central conflicts and core thematic elements early.
+Catalyst (10%): The inciting incident that forces the protagonist out of their status quo.
 
-Act II Part 1 (Ch 7-12ish): Investigation. Cass digs into the Corda contract, encounters
-Maret, allies with Torvald and Lenne, begins hearing the harmonic more clearly.
-Midpoint: Cass learns a partial truth that changes his approach (false victory or defeat).
+Act II Part 1 (23-50%): The protagonist reacts to the new world/situation. They attempt to solve problems using their old flawed logic. 
+Midpoint (50%): A false victory or false defeat that shifts the protagonist from reactive to proactive, revealing a partial truth.
 
-Act II Part 2 (Ch 13-18ish): Pressure mounts. Maret moves against the Bellwrights.
-Father's secrets begin to surface. Cass's lie is increasingly unsustainable.
-All Is Lost: Cass confronts his father and learns the full truth.
+Act II Part 2 (50-77%): The antagonists close in. The protagonist's lie becomes increasingly unsustainable.
+All Is Lost (75%): The protagonist suffers a massive defeat and learns the full truth, forcing them to face their flaw.
 
-Act III (Ch 19-24ish): Cass understands the question. Must choose how to answer.
-The climax plays out using the established intervals of Tonal Law.
-The resolution shows the aftermath of his choice.
+Act III (77-100%): The protagonist understands what must be done. They must choose how to answer the central thematic question.
+The climax plays out using the established rules of the world.
+The resolution shows the aftermath of their choice and the new status quo.
 
 CONSTRAINTS:
-- The climax must be mechanically resolvable using established Tonal Law intervals
-- Cass's investigation should feel like a mystery plot overlaid on a coming-of-age arc
+- The climax must be mechanically resolvable using the rules established in the world lore
+- The narrative should seamlessly blend the conventions defined in the genre guidelines
 - The Stability Trap: bad things must stay bad. Not everything resolves cleanly.
-- Perin must appear in person at some point (not just in memory/letters)
 - At least 3 chapters should be "quiet" -- character-focused, low-action, emotionally rich
 - Vary the try-fail types: 60%+ should be "yes-but" or "no-and"
 - The foreshadowing ledger must have plant-to-payoff distances of at least 3 chapters

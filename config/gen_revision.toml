@@ -10,7 +10,7 @@ from the existing draft while making the structural changes specified.
 You write the FULL chapter. Do not truncate or summarize.
 """
 
-user = """Rewrite Chapter {ch_num} of "The Second Son of the House of Bells."
+user = """Rewrite Chapter {ch_num} of the novel.
 
 REVISION BRIEF (follow this exactly):
 {brief}

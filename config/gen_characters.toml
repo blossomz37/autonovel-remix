@@ -48,7 +48,7 @@ Test: Remove dialogue tags. Can you tell who's speaking?
 
 BUILD THE REGISTRY WITH AT LEAST THESE CHARACTERS:
 
-1. **Cass Bellwright** (protagonist, POV character)
+1. **Protagonist (POV character)**
    - Full wound/want/need/lie chain
    - Three sliders with justification
    - Arc type (positive/negative/flat)
@@ -57,32 +57,26 @@ BUILD THE REGISTRY WITH AT LEAST THESE CHARACTERS:
    - At least 2 secrets
    - Key relationships mapped
 
-2. **Eddan Bellwright** (father)
-   - Same depth as Cass
-   - His relationship to the sealed journals, the shaking hands
-   - What he knows and what he's hiding
+2. **Primary Antagonist**
+   - Same depth as the protagonist
+   - Not necessarily a villain -- someone whose interests conflict with the protagonist
+   - Their own wound/want/need/lie (they should be understandable)
 
-3. **Perin Bellwright** (brother) 
-   - Even though he's absent for much of the story, he needs full depth
-   - What actually happened with the Corda contract
-   - His presence through absence
+3. **Core Ally / Mentor / Confidant** 
+   - Full depth
+   - What they know and what they're hiding
+   - How they challenge the protagonist's lie
 
-4. **Maret Corda** (antagonist)
-   - Not a villain -- someone whose interests conflicts with Cass's
-   - Her own wound/want/need/lie (she should be understandable)
+4. **Institutional or Systemic Antagonist**
+   - The system personified
+   - Their justification for maintaining the status quo
 
-5. **Rector Suvaine** (Academy Chancellor)
-   - The institutional antagonist -- the system personified
-   - She believes she's protecting Cantamura
-
-6. **Torvald Hess** (Compact leader)
+5. **The Outsider / Wildcard**
    - The outsider perspective on the system
-   - What he represents thematically
+   - What they represent thematically
 
-7. **At least 1-2 additional characters** that the story needs
-   - A peer/friend for Cass at the Academy?
-   - Someone at the House of Corda who knows Perin?
-   - A Court Singer with divided loyalties?
+6. **At least 2-3 additional supporting characters** that the story needs
+   - Fulfill specific thematic or plot roles
 
 FOR EACH CHARACTER INCLUDE:
 - Name, age, role
@@ -100,8 +94,7 @@ IMPORTANT:
 - Characters must INTERCONNECT. Their wants should conflict with each other.
 - Every secret should be something that would CHANGE the story if revealed.
 - Speech patterns must be distinct enough to pass the no-tags test.
-- Give Cass habits that come from his gift (the pain, the constant listening).
-- The father's shaking hands should connect to something specific.
-- Maret Corda should be as fully realized as Cass -- a worthy antagonist.
+- Give the protagonist physical habits that stem directly from their wound or unique abilities.
+- The primary antagonist must be as fully realized as the protagonist -- a worthy foil.
 - Target ~3000-4000 words. Dense character work, not padding.
 """
