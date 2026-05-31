@@ -33,8 +33,8 @@ load_dotenv(BASE_DIR / ".env")
 # Judge uses Opus 4.6 (harsh, critical). Writer uses Sonnet 4.6 (fast, long context).
 # Intentionally different to avoid self-congratulation.
 JUDGE_MODEL = os.environ.get("AUTONOVEL_JUDGE_MODEL", "claude-opus-4-6")
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-API_BASE_URL = os.environ.get("AUTONOVEL_API_BASE_URL", "https://api.anthropic.com")
+ANTHROPIC_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+API_BASE_URL = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/api/v1")
 
 # Beta header to unlock 1M context window on both Opus 4.6 and Sonnet 4.6
 ANTHROPIC_BETA = "context-1m-2025-08-07"
@@ -280,32 +280,19 @@ def call_judge(prompt, max_tokens=None, temperature=None):
     if max_tokens is None: max_tokens = CONFIG["model"]["max_tokens"]
     if temperature is None: temperature = CONFIG["model"]["temperature"]
     """Call the Anthropic judge LLM and return its response text."""
-    import httpx
-
-    headers = {
-        "x-api-key": ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
-        "anthropic-beta": ANTHROPIC_BETA,
-        "content-type": "application/json",
-    }
-    payload = {
-        "model": JUDGE_MODEL,
-        "max_tokens": max_tokens,
-        "temperature": temperature,
-        "system": CONFIG["prompts"]["system"].strip(),
-        "messages": [
-            {"role": "user", "content": prompt},
+    import openai
+    client = openai.OpenAI(api_key=ANTHROPIC_API_KEY, base_url=API_BASE_URL)
+    msg = client.chat.completions.create(
+        model=JUDGE_MODEL,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        messages=[
+            {"role": "system", "content": CONFIG["prompts"]["system"].strip()},
+            {"role": "user", "content": prompt}
         ],
-    }
-
-    resp = httpx.post(
-        f"{API_BASE_URL}/v1/messages",
-        headers=headers,
-        json=payload,
-        timeout=180,
+        timeout=300,
     )
-    resp.raise_for_status()
-    return resp.json()["content"][0]["text"]
+    return msg.choices[0].message.content
 
 
 def parse_json_response(text):

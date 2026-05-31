@@ -18,8 +18,8 @@ BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env")
 
 JUDGE_MODEL = os.environ.get("AUTONOVEL_JUDGE_MODEL", "claude-opus-4-6")
-API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-API_BASE = os.environ.get("AUTONOVEL_API_BASE_URL", "https://api.anthropic.com")
+API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+API_BASE = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/api/v1")
 CHAPTERS_DIR = BASE_DIR / "chapters"
 EDIT_LOG_DIR = BASE_DIR / "edit_logs"
 EDIT_LOG_DIR.mkdir(exist_ok=True)
@@ -30,22 +30,19 @@ with open(BASE_DIR / "config" / "adversarial_edit.toml", "rb") as f:
 def call_judge(prompt, max_tokens=None, temperature=None):
     if max_tokens is None: max_tokens = CONFIG["model"]["max_tokens"]
     if temperature is None: temperature = CONFIG["model"]["temperature"]
-    import httpx
-    headers = {
-        "x-api-key": API_KEY,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json",
-    }
-    payload = {
-        "model": JUDGE_MODEL,
-        "max_tokens": max_tokens,
-        "temperature": temperature,
-        "system": CONFIG["prompts"]["system"].strip(),
-        "messages": [{"role": "user", "content": prompt}],
-    }
-    resp = httpx.post(f"{API_BASE}/v1/messages", headers=headers, json=payload, timeout=300)
-    resp.raise_for_status()
-    return resp.json()["content"][0]["text"]
+    import openai
+    client = openai.OpenAI(api_key=API_KEY, base_url=API_BASE)
+    msg = client.chat.completions.create(
+        model=JUDGE_MODEL,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        messages=[
+            {"role": "system", "content": CONFIG["prompts"]["system"].strip()},
+            {"role": "user", "content": prompt}
+        ],
+        timeout=300,
+    )
+    return msg.choices[0].message.content
 
 def parse_json(text):
     text = text.strip()

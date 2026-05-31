@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).parent.parent
 load_dotenv(BASE_DIR / ".env")
 
 WRITER_MODEL = os.environ.get("AUTONOVEL_WRITER_MODEL", "claude-sonnet-4-6-20250217")
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-API_BASE_URL = os.environ.get("AUTONOVEL_API_BASE_URL", "https://api.anthropic.com")
+ANTHROPIC_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+API_BASE_URL = os.environ.get("AUTONOVEL_API_BASE_URL", "https://openrouter.ai/api/v1")
 ANTHROPIC_BETA = "context-1m-2025-08-07"
 
 
@@ -31,28 +31,19 @@ with open(BASE_DIR / "config" / "seed.toml", "rb") as f:
 def call_writer(prompt, max_tokens=None, temperature=None):
     if max_tokens is None: max_tokens = CONFIG["model"]["max_tokens"]
     if temperature is None: temperature = CONFIG["model"]["temperature"]
-    import httpx
-    headers = {
-        "x-api-key": ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
-        "anthropic-beta": ANTHROPIC_BETA,
-        "content-type": "application/json",
-    }
-    payload = {
-        "model": WRITER_MODEL,
-        "max_tokens": max_tokens,
-        "temperature": temperature,  # high temp for creative diversity
-        "system": CONFIG["prompts"]["system"].strip(),
-        "messages": [{"role": "user", "content": prompt}],
-    }
-    resp = httpx.post(
-        f"{API_BASE_URL}/v1/messages",
-        headers=headers,
-        json=payload,
-        timeout=120,
+    import openai
+    client = openai.OpenAI(api_key=ANTHROPIC_API_KEY, base_url=API_BASE_URL)
+    msg = client.chat.completions.create(
+        model=WRITER_MODEL,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        messages=[
+            {"role": "system", "content": CONFIG["prompts"]["system"].strip()},
+            {"role": "user", "content": prompt}
+        ],
+        timeout=300,
     )
-    resp.raise_for_status()
-    return resp.json()["content"][0]["text"]
+    return msg.choices[0].message.content
 
 
 
