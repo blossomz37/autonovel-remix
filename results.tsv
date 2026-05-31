@@ -1,0 +1,25 @@
+timestamp	phase	score	words	keep_discard	description
+discarded	foundation	-1.0	0	discard	Iteration 1: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 2: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 3: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 4: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 5: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 6: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 7: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 8: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 9: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 10: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 11: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 12: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 13: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 14: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 15: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 16: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 17: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 18: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 19: no improvement (-1.0 <= 0.0)
+discarded	foundation	-1.0	0	discard	Iteration 20: no improvement (-1.0 <= 0.0)
+	revision-cycle-1	0.0	0	cycle	Cycle 1: novel_score 0.0->0.0
+	revision-cycle-2	0.0	0	cycle	Cycle 2: novel_score 0.0->0.0
+	revision-cycle-3	0.0	0	cycle	Cycle 3: novel_score 0.0->0.0
+	export	0.0	0	export	Final export

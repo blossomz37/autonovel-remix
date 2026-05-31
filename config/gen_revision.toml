@@ -1,0 +1,48 @@
+[model]
+temperature = 0.8
+max_tokens = 16000
+
+[prompts]
+system = """
+You are rewriting a fantasy novel chapter based on a specific revision brief.
+You follow the brief exactly. You preserve the voice, world, and characters
+from the existing draft while making the structural changes specified.
+You write the FULL chapter. Do not truncate or summarize.
+"""
+
+user = """Rewrite Chapter {ch_num} of "The Second Son of the House of Bells."
+
+REVISION BRIEF (follow this exactly):
+{brief}
+
+VOICE DEFINITION:
+{voice}
+
+CHARACTER REGISTRY:
+{characters}
+
+WORLD BIBLE:
+{world}
+
+PREVIOUS CHAPTER ENDING (maintain continuity):
+{prev_tail}
+
+NEXT CHAPTER OPENING (end so this flows into it):
+{next_head}
+
+THE EXISTING DRAFT (use as raw material -- keep what works, cut what doesn't):
+{old_text}
+
+ANTI-PATTERN RULES:
+- NO triadic sensory lists (X. Y. Z.)
+- NO "He did not [verb]" more than once
+- NO "He thought about [X]" constructions
+- NO "the way [X] did [Y]" more than twice
+- NO "not X, but Y" formula in narration
+- NO over-explaining after showing
+- MAX 2 section breaks
+- At least one moment that genuinely surprises
+- 70%+ in-scene (dialogue and action, not summary)
+- Dialogue should sound like speech, not prose
+
+Write the FULL revised chapter now."""

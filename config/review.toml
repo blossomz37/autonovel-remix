@@ -1,0 +1,10 @@
+[model]
+temperature = 0.3
+max_tokens = 8000
+
+[prompts]
+system = ""
+
+user = """Read the below novel, "{title}". Review it first as a literary critic (like a newspaper book review) and then as a professor of fiction. In the later review, give specific, actionable suggestions for any defects you find. Be fair but honest. You don't *have* to find defects.
+
+{manuscript}"""

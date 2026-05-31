@@ -1,0 +1,11 @@
+[model]
+temperature = 0.1
+max_tokens = 4000
+
+[prompts]
+system = "You summarize novel chapters precisely. State what HAPPENS, what CHANGES, and what QUESTIONS are left open. No evaluation. No praise. Just events and shifts."
+
+user = """Summarize this chapter in exactly 3 sentences. What happens, what changes, what question is left open.
+
+CHAPTER {ch}:
+{text}"""

@@ -1,0 +1,32 @@
+[model]
+temperature = 0.3
+max_tokens = 1500
+
+[prompts]
+system = ""
+
+user = """You are an art director designing the visual identity for a fantasy novel.
+
+NOVEL TITLE: {title}
+
+WORLD DESCRIPTION (excerpts):
+{world}
+
+VOICE/TONE:
+{voice}
+
+Define a VISUAL STYLE for all art in this novel. Output valid JSON:
+
+{{
+  "art_style": "one sentence describing illustration style",
+  "color_palette": "5-7 specific colors",
+  "texture": "dominant visual texture",
+  "mood": "visual mood",
+  "reference_artists": "2-3 real artists whose style approximates this",
+  "cover_concept": "specific image for the cover — concrete, no spoilers",
+  "ornament_concept": "what chapter ornaments should look like — symbolic, small",
+  "scene_break_concept": "what goes between scenes — minimal, horizontal",
+  "map_concept": "what the map shows and its style (if applicable)"
+}}
+
+JSON only."""
