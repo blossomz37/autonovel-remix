@@ -39,26 +39,17 @@ def call_opus(prompt, max_tokens=None, temperature=None):
     if max_tokens is None: max_tokens = CONFIG["model"]["max_tokens"]
     if temperature is None: temperature = CONFIG["model"]["temperature"]
     """Call Opus with the full manuscript."""
-    import httpx
-    headers = {
-        "x-api-key": API_KEY,
-        "anthropic-version": "2023-06-01",
-        "anthropic-beta": "context-1m-2025-08-07",
-        "content-type": "application/json",
-    }
-    payload = {
-        "model": REVIEW_MODEL,
-        "max_tokens": max_tokens,
-        "temperature": temperature,
-        "messages": [{"role": "user", "content": prompt}],
-    }
-    print(f"Sending to {REVIEW_MODEL} ({len(prompt):,} chars)...", file=sys.stderr)
-    resp = httpx.post(
-        f"{API_BASE}/v1/messages",
-        headers=headers, json=payload, timeout=600,
+    import anthropic
+    client = anthropic.Anthropic(api_key=API_KEY, base_url=API_BASE)
+    msg = client.messages.create(
+        model=REVIEW_MODEL,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        system=CONFIG["prompts"]["system"].strip(),
+        messages=[{"role": "user", "content": prompt}],
+        timeout=300,
     )
-    resp.raise_for_status()
-    return resp.json()["content"][0]["text"]
+    return msg.content[0].text
 
 
 def get_title():

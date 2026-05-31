@@ -22,26 +22,17 @@ with open(BASE_DIR / "config" / "gen_world.toml", "rb") as f:
 def call_writer(prompt, max_tokens=None, temperature=None):
     if max_tokens is None: max_tokens = CONFIG["model"]["max_tokens"]
     if temperature is None: temperature = CONFIG["model"]["temperature"]
-    import httpx
-    headers = {
-        "x-api-key": API_KEY,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json",
-    }
-    payload = {
-        "model": WRITER_MODEL,
-        "max_tokens": max_tokens,
-        "temperature": temperature,
-        "system": CONFIG["prompts"]["system"].strip(),
-        "messages": [{"role": "user", "content": prompt}],
-    }
-    resp = httpx.post(f"{API_BASE}/v1/messages", headers=headers, json=payload, timeout=300)
-    try:
-        resp.raise_for_status()
-    except httpx.HTTPStatusError as e:
-        print(f"API Error: {resp.text}", file=sys.stderr)
-        raise e
-    return resp.json()["content"][0]["text"]
+    import anthropic
+    client = anthropic.Anthropic(api_key=API_KEY, base_url=API_BASE)
+    msg = client.messages.create(
+        model=WRITER_MODEL,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        system=CONFIG["prompts"]["system"].strip(),
+        messages=[{"role": "user", "content": prompt}],
+        timeout=300,
+    )
+    return msg.content[0].text
 
 seed = (BASE_DIR / "lore" / "seed.txt").read_text()
 voice = (BASE_DIR / "lore" / "voice.md").read_text()

@@ -66,25 +66,17 @@ Rules:
 
 
 def call_claude(prompt, max_tokens=8000):
-    import httpx
-    resp = httpx.post(
-        f"{API_BASE}/v1/messages",
-        headers={
-            "x-api-key": API_KEY,
-            "anthropic-version": "2023-06-01",
-            "anthropic-beta": "context-1m-2025-08-07",
-            "content-type": "application/json",
-        },
-        json={
-            "model": WRITER_MODEL,
-            "max_tokens": max_tokens,
-            "temperature": 0.1,
-            "messages": [{"role": "user", "content": prompt}],
-        },
+    import anthropic
+    client = anthropic.Anthropic(api_key=API_KEY, base_url=API_BASE)
+    msg = client.messages.create(
+        model=WRITER_MODEL,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        system=CONFIG["prompts"]["system"].strip(),
+        messages=[{"role": "user", "content": prompt}],
         timeout=300,
     )
-    resp.raise_for_status()
-    return resp.json()["content"][0]["text"]
+    return msg.content[0].text
 
 
 def parse_chapter(ch_num):

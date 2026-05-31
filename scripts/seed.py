@@ -31,28 +31,17 @@ with open(BASE_DIR / "config" / "seed.toml", "rb") as f:
 def call_writer(prompt, max_tokens=None, temperature=None):
     if max_tokens is None: max_tokens = CONFIG["model"]["max_tokens"]
     if temperature is None: temperature = CONFIG["model"]["temperature"]
-    import httpx
-    headers = {
-        "x-api-key": ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
-        "anthropic-beta": ANTHROPIC_BETA,
-        "content-type": "application/json",
-    }
-    payload = {
-        "model": WRITER_MODEL,
-        "max_tokens": max_tokens,
-        "temperature": temperature,  # high temp for creative diversity
-        "system": CONFIG["prompts"]["system"].strip(),
-        "messages": [{"role": "user", "content": prompt}],
-    }
-    resp = httpx.post(
-        f"{API_BASE_URL}/v1/messages",
-        headers=headers,
-        json=payload,
-        timeout=120,
+    import anthropic
+    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY, base_url=API_BASE_URL, default_headers={'anthropic-beta': ANTHROPIC_BETA})
+    msg = client.messages.create(
+        model=WRITER_MODEL,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        system=CONFIG["prompts"]["system"].strip(),
+        messages=[{"role": "user", "content": prompt}],
+        timeout=300,
     )
-    resp.raise_for_status()
-    return resp.json()["content"][0]["text"]
+    return msg.content[0].text
 
 
 

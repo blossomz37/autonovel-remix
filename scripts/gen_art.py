@@ -119,25 +119,17 @@ with open(BASE_DIR / "config" / "gen_art.toml", "rb") as f:
 def call_claude(prompt, max_tokens=None, temperature=None):
     if max_tokens is None: max_tokens = CONFIG["model"]["max_tokens"]
     if temperature is None: temperature = CONFIG["model"]["temperature"]
-    import httpx
-    resp = httpx.post(
-        f"{ANTHROPIC_BASE}/v1/messages",
-        headers={
-            "x-api-key": ANTHROPIC_KEY,
-            "anthropic-version": "2023-06-01",
-            "content-type": "application/json",
-        },
-        json={
-            "model": WRITER_MODEL,
-            "max_tokens": max_tokens,
-            "temperature": temperature,
-            "system": CONFIG["prompts"]["system"].strip(),
-            "messages": [{"role": "user", "content": prompt}],
-        },
+    import anthropic
+    client = anthropic.Anthropic(api_key=ANTHROPIC_KEY, base_url=ANTHROPIC_BASE)
+    msg = client.messages.create(
+        model=WRITER_MODEL,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        system=CONFIG["prompts"]["system"].strip(),
+        messages=[{"role": "user", "content": prompt}],
         timeout=120,
     )
-    resp.raise_for_status()
-    return resp.json()["content"][0]["text"]
+    return msg.content[0].text
 
 
 def load_style():
