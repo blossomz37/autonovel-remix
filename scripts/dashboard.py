@@ -12,6 +12,7 @@ DIRECTORY = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PREVIEWABLE = {'.md', '.txt', '.json', '.tsv', '.toml'}
 TREE_EXCLUDE = {'eval_logs'}
+FILE_EXCLUDE = {'state.json'}
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -62,7 +63,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         "path": rel,
                         "children": children
                     })
-            elif item.suffix.lower() in PREVIEWABLE:
+            elif item.suffix.lower() in PREVIEWABLE and item.name not in FILE_EXCLUDE:
                 result.append({
                     "name": item.name,
                     "type": "file",
